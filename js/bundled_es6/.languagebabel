@@ -1,0 +1,14 @@
+{
+    "babelMapsPath":                    "",
+    "babelMapsAddUrl":                  false,
+    "projectRoot":                      false,
+    "babelSourcePath":                  "./js/bundled_es6",
+    "babelTranspilePath":               "./js/bundled_es5",
+    "createMap":                        false,
+    "createTargetDirectories":          true,
+    "createTranspiledCode":             true,
+    "disableWhenNoBabelrcFileInPath":   true,
+    "suppressSourcePathMessages":       false,
+    "suppressTranspileOnSaveMessages":  false,
+    "transpileOnSave":                  true
+}

@@ -1,0 +1,23 @@
+{
+	"LandingPageContent": [
+		{
+			"title": "LandingPageTitle",
+			"introTitle": "Landing Page Title",
+            "intoSubTitle": "Landing Page Sub-Title",
+            "posterImages":[
+                {"image":"image_01.jpg", "imgDescription": "Image 01 Short Description"},
+                {"image":"image_02.jpg", "imgDescription": "Image 02 Short Description"},
+                {"image":"image_03.jpg", "imgDescription": "Image 03 Short Description"}
+            ],
+			"mainMenuNavs": [
+                {"menu": "Home", "link": "<a href='#'>go here</a>"},
+                {"menu": "Services", "link": "<a href='#'>go here</a>"},
+                {"menu": "Testimonials", "link": "<a href='#'>go here</a>"},
+                {"menu": "News", "link": "<a href='#'>go here</a>"},
+                {"menu": "Experience", "link": "<a href='#'>go here</a>"},
+                {"menu": "Contact", "link": "<a href='#'>go here</a>"}
+            ],
+			"landingPageDescription" : "<span class='introParag1'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</span> <br><span class='introParag2'>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. </span><br><span class='introParag1'>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</span>"
+		}
+	]
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8" >
+	<meta http-equiv = "X-UA-Compatible" content = "IE=edge" >
+	<meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" >
+    <title>Webpack Language-Babel</title>
+    <link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+
+    <!-- Main Page Container -->
+    <div class="container mainContainer" id="containerId">
+
+        <!-- Landing Page -->
+        <div class="landingPageContainer" id="landingPageContainerId">
+            <!-- Menu Navigation -->
+            <div class="menuNavClass" id="menuNavClassId"></div>
+            <!-- Poster Images -->
+            <divc class="imagePosterClass" id="imagePosterClassId"></div>
+            <!-- Description -->
+            <div class="landingPageDescription" id="landingPageDescriptionId"></div>
+        </div>
+
+        <!-- Services -->
+        <div class="servicesContainer" id="servicesContainerId">
+
+        </div>
+
+    </div>
+
+
+    <!-- <div class="containerX mainContainerX" ><h1>Webpack Language-Babel & Sass</h1>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="subHead">
+                    <h3>Running the transpiler:</h3>
+                    <p>
+                        Run npm start <br>
+                        Go to ./js/bundled_es6 folder and open bundle.es6 file <br>
+                        Re-save this file and it automatically gets transpiled and puts it in ./js/bundled_es5 with the file name: bundle.js <br>
+                    </p>
+                    <p class="p2">
+                        Converting SCSS to CSS: <br>
+                        Open ./js/bundled_es6/bundle.es6 and re-save. Language-Babel will automatically convert it to css and puts it in ./js/bundled_es5/ as bundle.js.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" ></script>
+	<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
+
+    <!--======================================================-->
+    <!--= bundled es6 codes: for testing =-->
+    <!-- <script src="./js/bundled_es6/bundle.es6"></script> -->
+
+    <!-- Dynamically created by Webpack: es6 -->
+    <!-- "start": "webpack-dev-server ./js/index.es6" -->
+    <!-- localhost:8080 -->
+    <script src="bundle.js"></script>
+
+    <!--= transpiled es6 to es5 codes =-->
+    <!-- localhost/GonzalesDesign_ApacheWebServer/ -->
+    <!-- <script src="./js/bundled_es5/bundle.js"></script> -->
+    <!--=====================================================-->
+
+</body>
+</html>
