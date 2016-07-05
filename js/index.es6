@@ -4,8 +4,9 @@
 /**---=========================================---**/
 
 /**-----------=====| DOM CACHING |=====-----------**/
-let mainContainer = (".mainContainer");
-let landingPageContainer = (".landingPageContainer");
+let mainContainer = $(".mainContainer");
+let landingPageContainer = $(".landingPageContainer");
+let menuNavClass = $(".menuNavClass");
 let menuNavClassId = $("#menuNavClassId");
 let landingPageDescriptionId = $("#landingPageDescriptionId")
 
@@ -17,6 +18,7 @@ let landingPageDescriptionId = $("#landingPageDescriptionId")
  const createElem = require('./CreateElementClass.es6');
  let createDiv = new createElem.CreateElementAny();
 
+const servicesList = require('./servicesList.es6');
 
  const fLandingPageAjax = () => {
    let promise = $.get("./js/json/landingPage.json");
@@ -24,7 +26,7 @@ let landingPageDescriptionId = $("#landingPageDescriptionId")
      let jx = 0;
      let ji = 0;
      for (let introData of data.LandingPageContent) {
-        createDiv.fCreateTag("div", "menuNavContainer", "menuNavContainerClass", jx, landingPageContainer);
+        createDiv.fCreateTag("div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass);
         let menuNavContainerId = document.getElementById("menuNavContainer" + "Id_" + jx);
 
         /**-----| Menu Navigation |-----**/
@@ -71,7 +73,7 @@ let landingPageDescriptionId = $("#landingPageDescriptionId")
   containerId.css({
       //"width" : "auto",
       //"height" : "200px",
-      "border" : "1px solid Cyan"
+      //"border" : "1px solid Cyan"
   })
   //anim.fAnimateHeightWidth(containerId, "auto", 500, 1);
 
@@ -119,23 +121,26 @@ let landingPageDescriptionId = $("#landingPageDescriptionId")
      let jx = 0;
      for (let introData of data.GDSiteIntro) {
          let container = $(".container");
-         let createElemAny = new CreateElementAny();
-         createElemAny.fCreateTag("div", "className", "title", jx, mainContainer)
+        //  let createElemAny = new CreateElementAny();
+        //  createElemAny.fCreateTag("div", "className", "title", jx, mainContainer)
 
-          let titleXId = $("#title" + "Id_" + jx); //set id
-          createElemAny.fCreateTag("p", "paragClass", "parag", jx, titleXId);
-          //let paragClass = $(".paragClass");
-          //let x = $("#parag" + "Id_" + jx); //set id
-          //let x = $("#paragId_jx"); //set id
-          //console.log("paragId: ", paragId);
-          //var x = document.getElementById('paragId_jx');
-          let x = document.getElementById("parag" + "Id_" + jx);
-          //console.log("x: ", x);
-          let strng = introData.codingThisSite;
-          let subStrng = strng.substr(0, 150);
-          x.innerHTML = subStrng + " ...more";
+        //   let titleXId = $("#title" + "Id_" + jx); //set id
+        //   createElemAny.fCreateTag("p", "paragClass", "parag", jx, titleXId);
+        //let paragClass = $(".paragClass");
+        //let x = $("#parag" + "Id_" + jx); //set id
+        //let x = $("#paragId_jx"); //set id
+        //console.log("paragId: ", paragId);
+        //var x = document.getElementById('paragId_jx');
+        //   let x = document.getElementById("parag" + "Id_" + jx);
+        //   //console.log("x: ", x);
+        //   let strng = introData.codingThisSite;
+        //   let subStrng = strng.substr(0, 150);
+        //   x.innerHTML = subStrng + " ...more";
      }
    })
  }
  /**----------===| INVOKE FUNCTION |===----------**/
- fIntroAjax();
+ //fIntroAjax();
+
+/**----------===| Invoke fServicesListAjax function from servicesList.es6 |===----------**/
+servicesList.fServicesListAjax();

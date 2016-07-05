@@ -8,6 +8,16 @@ $Red : Red;
 $YellowGreen : yellowGreen;
 $Orange : Orange;
 $Green : Green;
+$CyanishBlue : rgb(15, 152, 171);
+$Purple : Purple;
+
+//font-family: 'Pathway Gothic One', sans-serif;
+//font-family: 'News Cycle', sans-serif;
+//font-family: 'Roboto', sans-serif;
+//font-family: 'Source Sans Pro', sans-serif;
+//font-family: 'Dosis', sans-serif;
+//font-family: 'Open Sans Condensed', sans-serif;
+
 
 .mainContainer{
     //width : 90%;
@@ -16,11 +26,11 @@ $Green : Green;
     margin-left: auto;
     padding-left: 0px;
     padding-right: 0px;
-    -webkit-box-shadow: 0px 0px 12px 3px rgba(25, 25, 25, 0.10);
-    box-shadow: 0px 0px 20px 10px rgba(25, 25, 25, 0.10);
+    //-webkit-box-shadow: 0px 0px 12px 3px rgba(25, 25, 25, 0.10);
+    //box-shadow: 0px 0px 20px 10px rgba(25, 25, 25, 0.10);
     //background-color: #80d06b;
     //float: left;
-    border: 1px solid $Grey;
+    //border: 1px solid $Grey;
 }
 
 .landingPageContainer{
@@ -50,15 +60,14 @@ $Green : Green;
     padding-top: 10px;
     border: 0px solid $Orange;
 }
-
 .menuNavContainerClass{
-    width: 80%;
+    //width: 80%;
     margin-right: auto;
     margin-left: auto;
     border: 1px solid $Green;
 }
 .menuNavClass{
-    font-family: "Open-Sans", sans-serif;
+    font-family: "Open Sans Condensed", sans-serif;
     font-weight: 300;
     font-size: 1.2em;
     text-transform: uppercase;
@@ -135,4 +144,54 @@ p {
 /**-----|  |-----**/
 #introParag1{
 
+}
+
+/**-----| SERVICES |-----**/
+.servicesContainerX{
+    width: auto;;
+    height: auto;;
+    text-align: center;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 300;
+    font-size: 3em;
+    text-transform: uppercase;
+    margin-top: 10px;
+    color: $CyanishBlue;
+    border: 1px solid $YellowGreen
+}
+.servicesContainerClass{
+    width: auto;;
+    height: auto;;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 3em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $CyanishBlue;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border: 1px solid $YellowGreen
+}
+.servicesListClass{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    margin-top: 1px;
+    color: rgb(56, 60, 60);
+    border: 1px solid $YellowGreen;
+}
+.servicesULClass{
+    height: auto;
+    border: 1px solid $Purple;
+}
+
+li {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.2em;
+    font-weight: 300;
+    display: block;
+    width: 100%;
+    float: left;
+    border: 0px solid $YellowGreen;
 }

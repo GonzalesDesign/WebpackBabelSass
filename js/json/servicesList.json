@@ -1,0 +1,37 @@
+{
+	"ServicesListContent": [
+		{
+			"title": "ServicesList",
+			"introTitle": "Services Include:",
+			"servicesList": [
+                {"services": "Private Hospital Care", "link": "linkHereIfThere'sAny"},
+                {"services": "Transgender Post-Op Care", "link": "linkHereIfThere'sAny"},
+                {"services": "Geriatric Care Management", "link": "linkHereIfThere'sAny"},
+				{"services": "Post-Op Surgical Care", "link": "linkHereIfThere'sAny"},
+                {"services": "IVF IM Injections", "link": "linkHereIfThere'sAny"},
+                {"services": "Elder Care and Senior Patient Care", "link": "linkHereIfThere'sAny"},
+                {"services": "Pick Up and Nurse Excort", "link": "linkHereIfThere'sAny"},
+				{"services": "IV Theraphy", "link": "linkHereIfThere'sAny"},
+				{"services": "Alzheimer's & Dementia Patients Care", "link": "linkHereIfThere'sAny"},
+				{"services": "Plastic Surgery Recovery", "link": "linkHereIfThere'sAny"},
+				{"services": "Orthopedic Surgery Recovery", "link": "linkHereIfThere'sAny"},
+				{"services": "Neonatal Care", "link": "linkHereIfThere'sAny"},
+				{"services": "Home Visits by Nurse or CNA", "link": "linkHereIfThere'sAny"},
+				{"services": "Lyme Disease IV Infusions", "link": "linkHereIfThere'sAny"},
+				{"services": "Breast Reconstruction Recovery", "link": "linkHereIfThere'sAny"},
+				{"services": "Knee and Hip Replacement", "link": "linkHereIfThere'sAny"},
+				{"services": "Personalized Scheduling", "link": "linkHereIfThere'sAny"},
+				{"services": "Cosmetic Surgery Preparation", "link": "linkHereIfThere'sAny"},
+				{"services": "hand and Foot Surgery", "link": "linkHereIfThere'sAny"},
+				{"services": "Flexible Rates For Extended Care", "link": "linkHereIfThere'sAny"},
+				{"services": "Breast Augmentation Recovery", "link": "linkHereIfThere'sAny"},
+				{"services": "Contact", "link": "linkHereIfThere'sAny"}
+            ],
+			"servicesImages":[
+                {"image":"image_01.jpg", "imgDescription": "Image 01 Short Description"},
+                {"image":"image_02.jpg", "imgDescription": "Image 02 Short Description"},
+                {"image":"image_03.jpg", "imgDescription": "Image 03 Short Description"}
+            ]
+		}
+	]
+}
