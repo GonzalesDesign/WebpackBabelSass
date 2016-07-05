@@ -49,30 +49,49 @@ const fServicesListAjax = () => {
         //let servicesListContainerId = document.getElementById("servicesListContainer" + "Id_" + jx);
         //let servicesListContainerId = $("#servicesListUL" + "Id_" + jx);
 
-        // let ul = document.createElement('ul');
-        // ul.className = "servicesULClass";
-        //  $(ul).appendTo(servicesMainContainerId); //servicesMainContainerId servicesContainerId
+        let ul = document.createElement('ul');
+        ul.className = "servicesULClass";
+         $(ul).appendTo(servicesMainContainerId); //servicesMainContainerId servicesContainerId
+        let servicesULIdHeight = $("ul")[0].scrollHeight
 
-         createDiv.fCreateTag("UL", "servicesUL", "servicesULClass", jx, servicesMainContainerId);
-         let servicesULId = $("#servicesUL" + "Id_" + jx);
-         let servicesULIdHeight = servicesULId.height()
-         console.log("servicesULIdHeight: ",servicesULIdHeight);
+        //  createDiv.fCreateTag("UL", "servicesUL", "servicesULClass", jx, servicesMainContainerId);
+        //  let servicesULId = $("#servicesUL" + "Id_" + jx);
+        //  let servicesULIdHeight = servicesULId.height();
+          //console.log("servicesULIdHeight: ",servicesULIdHeight);
+
         //  servicesULId.css({
         //      "height" :
         //  })
 
         for (let servicesList of services.servicesList){
             ji++;
-            // createDiv.fCreateTag("div", "servicesList", "servicesListClass", ji, servicesListContainerId);
+
+            /**----- Using DIV -----**/
+            // createDiv.fCreateTag("div", "servicesList", "servicesListClass", ji, servicesMainContainerId);
             // let servicesListId = document.getElementById("servicesListId_" + ji);
             // //let servicesListId = $("#servicesListId_" + ji);
             // servicesListId.innerHTML = servicesList.services;
-            // console.log("servicesListId: ",servicesListId);
-            // console.log("servicesList.services: ",servicesList.services);
+            // // console.log("servicesListId: ",servicesListId);
+            // // console.log("servicesList.services: ",servicesList.services);
 
+            /**----- Using UL & LI -----**/
             let li = document.createElement('li');
-            $(li).appendTo(servicesULId);
+            //$(li).appendTo(servicesULId);
+            $(li).appendTo(ul);
             li.innerHTML=li.innerHTML + servicesList.services;
+            /**----- Getting the LI height -----**/
+            let servicesLIIdHeight = $("li")[0].scrollHeight
+            console.log("servicesLIIdHeight: ",servicesLIIdHeight);
+
+            // let ulHeight = (servicesLIIdHeight * ji)/3;
+            // console.log("ulHeight: ",ulHeight);
+
+            // createDiv.fCreateTag("LI", "servicesLI", "servicesLIClass", ji, servicesULId);
+            // let servicesLIId = $("#servicesUL" + "Id_" + ji);
+            // servicesLIId.innerHTML=servicesLIId.innerHTML + servicesList.services;
+            //
+            // let servicesLIIdHeight = servicesLIId.height()
+            // console.log("servicesLIIdHeight: ",servicesLIIdHeight);
 
             // servicesListId.css({
             //     "height" : "20px",
@@ -82,6 +101,7 @@ const fServicesListAjax = () => {
     }
   })
 }
+
 
 /**-----------=====| EXPORTS |=====-----------**/
 module.exports.fServicesListAjax = fServicesListAjax;

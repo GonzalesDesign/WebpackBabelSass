@@ -1,6 +1,11 @@
-/**---==============================================---**/
-/**----------=====| module: scss - css |=====----------**/
-/**---==============================================---**/
+@charset "UTF-8";
+/***********************************************
+* Project: Webpack Language-Babel Sass Template
+* Developer: rolandolloyd@gmail.com
+* Copyright © 2015 GonzalesDesign
+* Platform: ES2015, Webpack, Babel & Sass
+* Module: SCSS to CSS
+***********************************************/
 .mainContainer {
   height: auto;
   margin-right: auto;
@@ -93,6 +98,10 @@ p {
 
 /**-----|  |-----**/
 /**-----| SERVICES |-----**/
+.servicesMainContainer {
+  height: 350px;
+  background-color: #e2e3e3; }
+
 .servicesContainerX {
   width: auto;
   height: auto;
@@ -117,7 +126,7 @@ p {
   margin-top: 10px;
   padding-top: 20px;
   padding-bottom: 30px;
-  border: 1px solid yellowGreen; }
+  border: 0px solid yellowGreen; }
 
 .servicesListClass {
   font-family: "Open Sans", sans-serif;
@@ -128,14 +137,13 @@ p {
   border: 1px solid yellowGreen; }
 
 .servicesULClass {
-  height: auto;
-  border: 1px solid Purple; }
+  border: 0px solid Purple; }
 
 li {
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.2em;
   font-weight: 300;
   display: block;
-  width: 100%;
+  width: 30%;
   float: left;
   border: 0px solid yellowGreen; }

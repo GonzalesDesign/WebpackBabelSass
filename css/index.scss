@@ -1,8 +1,12 @@
+/***********************************************
+* Project: Webpack Language-Babel Sass Template
+* Developer: rolandolloyd@gmail.com
+* Copyright © 2015 GonzalesDesign
+* Platform: ES2015, Webpack, Babel & Sass
+* Module: SCSS to CSS
+***********************************************/
 
-/**---==============================================---**/
-/**----------=====| module: scss - css |=====----------**/
-/**---==============================================---**/
-
+$LightGrey : rgb(226, 227, 227);
 $Grey : Grey;
 $Red : Red;
 $YellowGreen : yellowGreen;
@@ -17,7 +21,6 @@ $Purple : Purple;
 //font-family: 'Source Sans Pro', sans-serif;
 //font-family: 'Dosis', sans-serif;
 //font-family: 'Open Sans Condensed', sans-serif;
-
 
 .mainContainer{
     //width : 90%;
@@ -147,6 +150,10 @@ p {
 }
 
 /**-----| SERVICES |-----**/
+.servicesMainContainer{
+    height: 350px;
+    background-color: $LightGrey;
+}
 .servicesContainerX{
     width: auto;;
     height: auto;;
@@ -171,7 +178,7 @@ p {
     margin-top: 10px;
     padding-top: 20px;
     padding-bottom: 30px;
-    border: 1px solid $YellowGreen
+    border: 0px solid $YellowGreen
 }
 .servicesListClass{
     font-family: "Open Sans", sans-serif;
@@ -182,8 +189,8 @@ p {
     border: 1px solid $YellowGreen;
 }
 .servicesULClass{
-    height: auto;
-    border: 1px solid $Purple;
+    //height: 100px;
+    border: 0px solid $Purple;
 }
 
 li {
@@ -191,7 +198,7 @@ li {
     font-size: 1.2em;
     font-weight: 300;
     display: block;
-    width: 100%;
+    width: 30%;
     float: left;
     border: 0px solid $YellowGreen;
 }

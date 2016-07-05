@@ -42,9 +42,76 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	
+	/***********************************************
+	* Project: Webpack Language-Babel Sass Template
+	* Developer: rolandolloyd@gmail.com
+	* Copyright © 2015 GonzalesDesign
+	* Platform: ES2015, Webpack, Babel & Sass
+	* Module: Index
+	***********************************************/
+
+	(function() { /*IIFE:Immediately-Invoked Function Expression*/
+	  "use strict";
+
+	/**-----------=====| DOM CACHING |=====-----------**/
+	let mainContainer = $(".mainContainer");
+	let landingPageContainer = $(".landingPageContainer");
+	let menuNavClass = $(".menuNavClass");
+	let menuNavClassId = $("#menuNavClassId");
+	let landingPageDescriptionId = $("#landingPageDescriptionId")
+
+	/**-----------=====| IMPORT | REQUIRE |=====-----------**/
+	 /** DESCRIPTIONS:
+	  ** FILES IMPORTED FROM OTHER JS FILES
+	  ** SEPERATE JS FILES FOR EASIER READABILITY AND MAINTENANCE
+	  **----------------------------------------------------------------**/
+	 const createElem = __webpack_require__(1);
+	 let createDiv = new createElem.CreateElementAny();
+
+	const servicesList = __webpack_require__(2);
+
+	 const fLandingPageAjax = () => {
+	   let promise = $.get("./js/json/landingPage.json");
+	   promise.then(function(data) {
+	     let jx = 0;
+	     let ji = 0;
+	     for (let introData of data.LandingPageContent) {
+	        createDiv.fCreateTag("div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass);
+	        let menuNavContainerId = document.getElementById("menuNavContainer" + "Id_" + jx);
+
+	        /**-----| Menu Navigation |-----**/
+	        for(let menus of introData.mainMenuNavs){
+	            ji++;
+	            console.log("menus.menu: ", menus.menu);
+	            createDiv.fCreateTag("div", "menuNav", "menuNavClass", ji, menuNavContainerId);
+	            let menuNavId = document.getElementById("menuNav" + "Id_" + ji);
+	            menuNavId.innerHTML = menus.menu;
+	        }
+
+	        /**-----| Landing Page Description |-----**/
+	       createDiv.fCreateTag("div", "landingPage", "landingPageClass", jx, landingPageDescriptionId);
+	       let landingPageId = document.getElementById("landingPage" + "Id_" + jx);
+	       //let x = $("#landingPage" + "Id_" + jx);
+	       let strng = introData.landingPageDescription;
+	       let subStrng = strng.substr(0, 700);
+	       landingPageId.innerHTML = subStrng;
+	     }
+
+	   })
+	 };
+
+	 fLandingPageAjax();
+
+	    // const twoKolumns = require('./twoColumns');
+	    // let oneThirdTest = new twoKolumns.ThreeColumnsClass();
+	    // oneThirdTest.fThreeColumns(gdContainerWidth);
+
+	 console.log("mainContainer: ", mainContainer);
+	 console.log("createElem: ", createElem);
+
 	//let require = require(".require");
 	/**----------=====| anim |=====----------**/
 	//const TweenMax = require('gsap');
@@ -55,38 +122,37 @@
 
 	  let containerId = $("#containerId");
 
+
 	  containerId.css({
-	      "width" : "auto",
-	      "height" : "200px",
-	      "border" : "1px solid red"
+	      //"width" : "auto",
+	      //"height" : "200px",
+	      //"border" : "1px solid Cyan"
 	  })
 	  //anim.fAnimateHeightWidth(containerId, "auto", 500, 1);
-
-	console.log("gsap un-installed");
 
 	/**----------=====| CreateElementAny Class |=====----------**/
 	/** Description:
 	** Class template for creating basic "a" tag.
 	***********************/
-	class CreateElementAny {
-	    constructor() {}
-
-	    /** Generic method for creating a tag element **/
-	    fCreateTag(tagType, className, title, counter, appendedTo) {
-	      let divName = document.createElement(tagType);
-	      divName.id = title + "Id_" + counter; //set id
-	      divName.className = className; //title + "Class";
-	      //divName.href = "#modalCarousel";
-	      //let divNameId     = $ ("#" + title + "Id_" + counter); //get id
-	      $(divName).appendTo(appendedTo);
-	      let tagId = $("#"+title + "Id_" + counter); //set id
-	      tagId.css({
-	          "width" : "auto",
-	          "height" : "auto",
-	          "border" : "1px solid Grey"
-	      })
-	    }
-	};
+	// class CreateElementAny {
+	//     constructor() {}
+	//
+	//     /** Generic method for creating a tag element **/
+	//     fCreateTag(tagType, className, title, counter, appendedTo) {
+	//       let divName = document.createElement(tagType);
+	//       divName.id = title + "Id_" + counter; //set id
+	//       divName.className = className; //title + "Class";
+	//       //divName.href = "#modalCarousel";
+	//       //let divNameId     = $ ("#" + title + "Id_" + counter); //get id
+	//       $(divName).appendTo(appendedTo);
+	//       let tagId = $("#"+title + "Id_" + counter); //set id
+	//       tagId.css({
+	//           "width" : "400px",
+	//           "height" : "auto",
+	//           "border" : "1px solid Grey"
+	//       })
+	//     }
+	// };
 	// let container = $(".container");
 	// let createElemAny = new CreateElementAny();
 	// createElemAny.fCreateTag("div", "className", "title", 1, container)
@@ -100,8 +166,7 @@
 	//  //var x = document.getElementById('paragId_1');
 	//  let x = document.getElementById("parag" + "Id_" + 1);
 	//  x.innerHTML = "<h2>Some test text goes here!</h2>";
-	 console.log("Running webpack-dev-serverX");
-
+	 //console.log("Running webpack-dev-serverX");
 
 	 const fIntroAjax = () => {
 	   let promise = $.get("./js/json/contentData.json");
@@ -109,145 +174,193 @@
 	     let jx = 0;
 	     for (let introData of data.GDSiteIntro) {
 	         let container = $(".container");
-	         let createElemAny = new CreateElementAny();
-	         createElemAny.fCreateTag("div", "className", "title", jx, container)
+	        //  let createElemAny = new CreateElementAny();
+	        //  createElemAny.fCreateTag("div", "className", "title", jx, mainContainer)
 
-	          let titleXId = $("#title" + "Id_" + jx); //set id
-	          createElemAny.fCreateTag("p", "paragClass", "parag", jx, titleXId);
-	          //let paragClass = $(".paragClass");
-	          //let x = $("#parag" + "Id_" + jx); //set id
-	          //let x = $("#paragId_jx"); //set id
-	          //console.log("paragId: ", paragId);
-	          //var x = document.getElementById('paragId_jx');
-	          let x = document.getElementById("parag" + "Id_" + jx);
-	          console.log("x: ", x);
-	          x.innerHTML = introData.title;
-
-
-	       /**----------===| CREATE CODING CONTAINER DIV INSIDE INTROCONTAINER |===----------**/
-	    //    createDiv.fCreateBasicElement(introData.title + "_CodingContainer", jx, "codingContainer", introContainer);
-	    //    let codingContainerId = $("#" + introData.title + "_CodingContainer" + jx); //GET ID
-	    //    /**----------===| CREATE CODING TEXT DIV INSIDE CODINGCONTAINER |===----------**/
-	    //    createDiv.fCreateBasicElement(introData.title + "_CodingThisSite", jx, "codingThisSite", codingContainerId);
-	    //    codingThisSiteId = $("#" + introData.title + "_CodingThisSite" + jx); //GET ID
-	    //    const codingThisSite = $(".codingThisSite"); //GET CLASSNAME
-	    //    let codingThisSiteHeight = codingThisSiteId.height();
-	    //    fBasicDivStyle(codingThisSiteId, "auto", gdContainerWidth, "absolute"); //CSS
-	    //    let centerOnScreenY = (inWindowHeight / 2) - (codingThisSiteHeight / 2);
-	    //    codingThisSiteId.css({
-	    //      "margin-top": centerOnScreenY
-	    //    })
-	    //    /**----------===| CREATE CODING PARAGRAPHS |===----------**/
-	    //    textDiv.fCreateTextDiv("codingTitle", jx, "codingTitleClass", codingThisSiteId, introData.codingTitle);
-	    //    textDiv.fCreateTextDiv("codingDescription", jx, "codingDescriptionClass", codingThisSiteId, introData.codingThisSite);
-	       //
-	    //    /**----------===| CREATE LOGO CONTAINER DIV INSIDE INTROCONTAINER DIV |===----------**/
-	    //    createDiv.fCreateBasicElement(introData.title + "_LogoContainer", jx, "logoContainer", introContainer);
-	    //    logoContainerDivId = $("#" + introData.title + "_LogoContainer" + jx); //GET ID
-	    //    /**----------===| LOGO TITLE CONTAINER COLUMNS PERCENTAGE |===----------**/
-	    //    logoTitleColumnPercent = introData.logoTitleColumnPercent; //json supplied
-	    //    twoColumnsIntroSection.fTwoColumnsQueries(gdContainerWidth, logoTitleColumnPercent, 0, 0);
-	       //
-	    //    /**----------===| CREATE LOGO TITLE LEFT COLUMNS |===----------**/
-	    //    createDiv.fCreateBasicElement(introData.title + "_IntroLeftColmn", jx, "introLeftColumnClass", logoContainerDivId);
-	    //    logoLeftColDivId = $("#" + introData.title + "_IntroLeftColmn" + jx); //GET ID
-	    //    fBasicDivStyle(logoLeftColDivId, arbitraryNum, twoColumnsIntroSection.LeftColumn, "relative"); //CSS
-	       //
-	    //    /**----------===| CREATE LOGO TITLE RIGHT COLUMNS |===----------**/
-	    //    createDiv.fCreateBasicElement(introData.title + "_IntroRightColmn", jx, "introRightColumnClass", logoContainerDivId);
-	    //    logoRightColDivId = $("#" + introData.title + "_IntroRightColmn" + jx); //GET ID
-	    //    fBasicDivStyle(logoRightColDivId, "auto", "auto", "relative"); //CSS
-	       //
-	    //    // let introRightColumnClass = $(".introRightColumnClass");
-	    //    // console.log("introRightColumnClass :", introRightColumnClass);
-	    //    // let introRightColumnHeight = introRightColumnClass.height();
-	    //    // console.log("introRightColumnHeight :", introRightColumnHeight);
-	    //    //TEMP
-	    //    // logoLeftColDivId.css({
-	    //    //   "border-top": "2px solid red"
-	    //    // })
-	    //    // logoRightColDivId.css({
-	    //    //   "border-top": "2px solid yellowGreen",
-	    //    //   "border-bottom": "1px solid cyan"
-	    //    // })
-	       //
-	    //    /**----------===| CREATE LOGO TITLES |===----------**/
-	    //    textDiv.fCreateTextDiv(introData.title + "_LogoTitle", jx, "logoTitleClass", logoRightColDivId, introData.introTitle); //R.LLOYD GONZALES
-	    //    logoTitleId = $("#" + introData.title + "_LogoTitle" + jx);
-	    //    logoText.fTextQueries(gdContainerWidth, logoTitleId, logoTitleSmlFontSize, logoTitleMidFontSize, logoTitleLrgFontSize);
-	       //
-	    //    /**----------===| CREATE INTRO SUB-TITLES |===----------**/
-	    //    textDiv.fCreateTextDiv(introData.title + "_LogoSubTitle", jx, "logoSubTitleClass", logoRightColDivId, introData.intoSubTitle); //Passionate about Arts, Designs & Coding
-	    //    logoSubTitleId = $("#" + introData.title + "_LogoSubTitle" + jx);
-	    //    logoText.fTextQueries(gdContainerWidth, logoSubTitleId, logoSubTitleSmlFontSize, logoSubTitleMidFontSize, logoSubTitleLrgFontSize);
-	       //
-	    //    /**----------===| CREATE CALLOUT |===----------**/
-	    //    textDiv.fCreateTextDiv(introData.title + "_Callout", jx, "calloutClass", logoRightColDivId, introData.callout); //Portfolio: Scroll Down
-	    //    introCalloutId = $("#" + introData.title + "_Callout" + jx);
-	    //    logoText.fTextQueries(gdContainerWidth, introCalloutId, introCalloutFontSize, introCalloutFontSize, introCalloutFontSize);
-	       //
-	    //    /**----------===| TOGGLE "CODE THIS SITE" DESCRIPTION |===----------**/
-	       //
-	    //    /**----------===| CREATE BUTTON ELEMENT |===----------**/
-	    //    createButton.fCreateBtn("btn btn-link codingBtn", "_Btn", jx, logoRightColDivId, "coding this site"); //introFluidContainer
-	    //    toggleBtn = $(".codingBtn"); //get clasname
-	    //    const closeCoding = $(".closeCoding"); //get clasname
-	    //    logoText.fTextQueries(gdContainerWidth, toggleBtn, codingBtnFontSize, codingBtnFontSize, codingBtnFontSize);
-	    //    let toggleBtnId = $("#" + introData.title + "_Btn" + jx);
-	    //    logoText.fTextQueries(gdContainerWidth, toggleBtn, codingBtnFontSize, codingBtnFontSize, codingBtnFontSize);
-	       //
-	    //    /**----------===| LOGO CONTAINER: BASIC CSS |===----------**/
-	       //
-	    //    rightColumnHeight = logoRightColDivId.height(); // + 30;
-	       //
-	    //    fBasicIntroStyle(logoContainerDivId, "auto", gdContainerWidth);
-	    //    logoContainerDivId.css({
-	    //      //"border": "1px solid pink",
-	    //      "margin-top": inWindowHeight - (rightColumnHeight + 40)
-	    //    })
-	       //
-	    //    fToggleBtn(toggleBtn, codingThisSite);
-	    //    fToggleBtn(closeCoding, codingThisSite);
-	    //    fRollEvents(toggleBtn, "#949494");
-	    //    fRollEvents(closeCoding, "#5780a2");
-	       //
-	    //    /**----------===| CREATE IMAGE DIV INSIDE INTROFLUIDCONTAINER |===----------**/
-	    //    imageBasicDiv.fCreateBasicElement(introData.title + "_IntroImg", jx, "introDivClass", introFluidContainer);
-	    //    /**----------===| NEW IMAGE CREATION |===----------**/
-	    //    myIntroImage = new Image();
-	    //    let imagesPath = "./images/" + introData.title + "/";
-	    //    /**-----====={ Load image randomly }=====-----**/
-	    //    var randImg = introData.images[Math.floor(introData.images.length * Math.random())];
-	    //    myIntroImage.src = imagesPath + randImg.imgName; //introData.images[0].imgName; //randImg;
-	    //    /**----------===| IMAGE DIV: IDS |===----------**/
-	    //    introImageIds = $("#" + introData.title + "_IntroImg" + jx);
-	    //    console.log("introImageIds: ", introImageIds);
-	       //
-	    //    /**----------===| COLOR THEME: INTRO SUB TITLE |===----------**/
-	    //    randColorTheme = randImg.colorTheme;
-	    //    logoSubTitleId.css({
-	    //      "color": randColorTheme
-	    //    })
-	    //    /**----------===| COLOR THEME: INTRO LOGO CONTAINER |===----------**/
-	    //    let hex2Rgb = fConvertHex(randColorTheme, 50)
-	    //    logoContainerDivId.css({
-	    //      "border-top": "4px double " + hex2Rgb,
-	    //      "border-bottom": "6px double " + hex2Rgb
-	    //    });
-
-	       /**----------===| IMAGE DIV: CSS |===----------**/
-	       /*        Populating the div with image        *
-	       **--------------------------------------------**/
-	       // let inWindowHeight = window.innerHeight; // / 2;
-	       // let inWindowWidth = window.innerWidth;
-	       // let inWindowWidth = window.innerWidth;
-	       // let inWindowHeight = window.innerHeight;
-	       //fIntroImageStyle(introImageIds, inWindowHeight, inWindowWidth, myIntroImage.src);
+	        //   let titleXId = $("#title" + "Id_" + jx); //set id
+	        //   createElemAny.fCreateTag("p", "paragClass", "parag", jx, titleXId);
+	        //let paragClass = $(".paragClass");
+	        //let x = $("#parag" + "Id_" + jx); //set id
+	        //let x = $("#paragId_jx"); //set id
+	        //console.log("paragId: ", paragId);
+	        //var x = document.getElementById('paragId_jx');
+	        //   let x = document.getElementById("parag" + "Id_" + jx);
+	        //   //console.log("x: ", x);
+	        //   let strng = introData.codingThisSite;
+	        //   let subStrng = strng.substr(0, 150);
+	        //   x.innerHTML = subStrng + " ...more";
 	     }
 	   })
 	 }
 	 /**----------===| INVOKE FUNCTION |===----------**/
-	 fIntroAjax();
+	 //fIntroAjax();
+
+	/**----------===| Invoke fServicesListAjax function from servicesList.es6 |===----------**/
+	servicesList.fServicesListAjax();
+
+	}());
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	
+	/***********************************************
+	* Project: Webpack Language-Babel Sass Template
+	* Developer: rolandolloyd@gmail.com
+	* Copyright © 2015 GonzalesDesign
+	* Platform: ES2015, Webpack, Babel & Sass
+	* Module: CreateElementClass
+	***********************************************/
+
+	(function() { /*IIFE:Immediately-Invoked Function Expression*/
+	  "use strict";
+
+	/**----------=====| CreateElementAny Class |=====----------**/
+	  /** Description:
+	   ** Class template for creating basic "a" tag.
+	   *********************************************************/
+	  class CreateElementAny {
+	    constructor() {}
+
+	    /** Generic method for creating a tag element **/
+	    fCreateTag(tagType, title, className, counter, appendedTo) {
+	      let divName = document.createElement(tagType);
+	      divName.id = title + "Id_" + counter; //set id
+	      divName.className = className; //title + "Class";
+	      //divName.href = "#modalCarousel";
+	      let divNameId     = $ ("#" + title + "Id_" + counter); //get id
+	      //console.log("divNameId: ",divNameId);
+	      $(divName).appendTo(appendedTo);
+	      //TEMP
+	      divNameId.css({
+	          "height":"100px",
+	          "border":"1px solid yellowGreen"
+	      })
+	    }
+	};
+
+	/**-----------=====| EXPORTS |=====-----------**/
+	module.exports.CreateElementAny = CreateElementAny;
+
+	}());
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	/***********************************************
+	* Project: Webpack Language-Babel Sass Template
+	* Developer: rolandolloyd@gmail.com
+	* Copyright © 2015 GonzalesDesign
+	* Platform: ES2015, Webpack, Babel & Sass
+	* Module: Services List
+	***********************************************/
+
+	(function() { /*IIFE:Immediately-Invoked Function Expression*/
+	  "use strict";
+
+	/**-----------=====| IMPORT | REQUIRE |=====-----------**/
+	 /** Description:
+	  ** Files requiring from other js files
+	  **----------------------------------------------------------------**/
+	 const createElem = __webpack_require__(1);
+	 let createDiv = new createElem.CreateElementAny();
+
+	 //let servicesContainer = $(".servicesContainer");
+	 //let servicesContainerId = $("#servicesContainerId");
+	 let servicesMainContainerId = $("#servicesMainContainerId");
+
+	const fServicesListAjax = () => {
+	  let promise = $.get("./js/json/servicesList.json");
+	  promise.then(function(data) {
+	    let jx = 0;
+	    let ji = 0;
+	    for (let services of data.ServicesListContent) {
+	        /*----- Services Title -----*/
+	        createDiv.fCreateTag("div", "servicesContainer", "servicesContainerClass", jx, servicesMainContainerId);
+	        //let servicesContainerId = $("#servicesContainer" + "Id_" + jx);
+	        let servicesContainerId = document.getElementById("servicesContainer" + "Id_" + jx);
+	        servicesContainerId.innerHTML = services.introTitle;
+	        console.log("services.introTitle: ",services.introTitle);
+
+	        /*----- Services List -----*/
+	        // createDiv.fCreateTag("div", "servicesListContainer", "servicesListContainerClass", jx, servicesContainerId);
+	        // //let servicesListContainerId = document.getElementById("servicesListContainer" + "Id_" + jx);
+	        // let servicesListContainerId = $("#servicesListContainer" + "Id_" + jx);
+	        // let servicesListContainerIdWidth = servicesListContainerId.width()
+	        // servicesListContainerId.css({
+	        //     "border" : "10px solid Grey",
+	        //     "width" : servicesListContainerIdWidth / 3,
+	        //     "text-align" : "left"
+	        // })
+
+	        //createDiv.fCreateTag("ul", "servicesListUL", "servicesListULClass", jx, servicesContainerId);
+	        //let servicesListContainerId = document.getElementById("servicesListContainer" + "Id_" + jx);
+	        //let servicesListContainerId = $("#servicesListUL" + "Id_" + jx);
+
+	        let ul = document.createElement('ul');
+	        ul.className = "servicesULClass";
+	         $(ul).appendTo(servicesMainContainerId); //servicesMainContainerId servicesContainerId
+	        let servicesULIdHeight = $("ul")[0].scrollHeight
+
+	        //  createDiv.fCreateTag("UL", "servicesUL", "servicesULClass", jx, servicesMainContainerId);
+	        //  let servicesULId = $("#servicesUL" + "Id_" + jx);
+	        //  let servicesULIdHeight = servicesULId.height();
+	          //console.log("servicesULIdHeight: ",servicesULIdHeight);
+
+	        //  servicesULId.css({
+	        //      "height" :
+	        //  })
+
+	        for (let servicesList of services.servicesList){
+	            ji++;
+
+	            /**----- Using DIV -----**/
+	            // createDiv.fCreateTag("div", "servicesList", "servicesListClass", ji, servicesMainContainerId);
+	            // let servicesListId = document.getElementById("servicesListId_" + ji);
+	            // //let servicesListId = $("#servicesListId_" + ji);
+	            // servicesListId.innerHTML = servicesList.services;
+	            // // console.log("servicesListId: ",servicesListId);
+	            // // console.log("servicesList.services: ",servicesList.services);
+
+	            /**----- Using UL & LI -----**/
+	            let li = document.createElement('li');
+	            //$(li).appendTo(servicesULId);
+	            $(li).appendTo(ul);
+	            li.innerHTML=li.innerHTML + servicesList.services;
+	            /**----- Getting the LI height -----**/
+	            let servicesLIIdHeight = $("li")[0].scrollHeight
+	            console.log("servicesLIIdHeight: ",servicesLIIdHeight);
+
+	            // let ulHeight = (servicesLIIdHeight * ji)/3;
+	            // console.log("ulHeight: ",ulHeight);
+
+	            // createDiv.fCreateTag("LI", "servicesLI", "servicesLIClass", ji, servicesULId);
+	            // let servicesLIId = $("#servicesUL" + "Id_" + ji);
+	            // servicesLIId.innerHTML=servicesLIId.innerHTML + servicesList.services;
+	            //
+	            // let servicesLIIdHeight = servicesLIId.height()
+	            // console.log("servicesLIIdHeight: ",servicesLIIdHeight);
+
+	            // servicesListId.css({
+	            //     "height" : "20px",
+	            //     "border" : "1px solid Red"
+	            // })
+	        }
+	    }
+	  })
+	}
+
+
+	/**-----------=====| EXPORTS |=====-----------**/
+	module.exports.fServicesListAjax = fServicesListAjax;
+
+
+	}());
 
 
 /***/ }

@@ -1,7 +1,14 @@
 
-/**---======================================================---**/
-/**----------=====| module: CreateElementClass |=====----------**/
-/**---======================================================---**/
+/***********************************************
+* Project: Webpack Language-Babel Sass Template
+* Developer: rolandolloyd@gmail.com
+* Copyright © 2015 GonzalesDesign
+* Platform: ES2015, Webpack, Babel & Sass
+* Module: CreateElementClass
+***********************************************/
+
+(function() { /*IIFE:Immediately-Invoked Function Expression*/
+  "use strict";
 
 /**----------=====| CreateElementAny Class |=====----------**/
   /** Description:
@@ -29,3 +36,5 @@
 
 /**-----------=====| EXPORTS |=====-----------**/
 module.exports.CreateElementAny = CreateElementAny;
+
+}());

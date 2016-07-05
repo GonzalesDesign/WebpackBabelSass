@@ -1,7 +1,14 @@
 
-/**---=========================================---**/
-/**----------=====| module: index |=====----------**/
-/**---=========================================---**/
+/***********************************************
+* Project: Webpack Language-Babel Sass Template
+* Developer: rolandolloyd@gmail.com
+* Copyright © 2015 GonzalesDesign
+* Platform: ES2015, Webpack, Babel & Sass
+* Module: Index
+***********************************************/
+
+(function() { /*IIFE:Immediately-Invoked Function Expression*/
+  "use strict";
 
 /**-----------=====| DOM CACHING |=====-----------**/
 let mainContainer = $(".mainContainer");
@@ -144,3 +151,5 @@ const servicesList = require('./servicesList.es6');
 
 /**----------===| Invoke fServicesListAjax function from servicesList.es6 |===----------**/
 servicesList.fServicesListAjax();
+
+}());
