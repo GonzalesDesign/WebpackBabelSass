@@ -17,9 +17,13 @@
  const createElem = require('./CreateElementClass.es6');
  let createDiv = new createElem.CreateElementAny();
 
+ /**-----------=====| DOM CACHING |=====-----------**/
+ let mainContainer = $(".mainContainer");
  //let servicesContainer = $(".servicesContainer");
  //let servicesContainerId = $("#servicesContainerId");
  let servicesMainContainerId = $("#servicesMainContainerId");
+ let ulContainerId = $("#ulContainerId");
+ let li;
 
 const fServicesListAjax = () => {
   let promise = $.get("./js/json/servicesList.json");
@@ -28,7 +32,7 @@ const fServicesListAjax = () => {
     let ji = 0;
     for (let services of data.ServicesListContent) {
         /*----- Services Title -----*/
-        createDiv.fCreateTag("div", "servicesContainer", "servicesContainerClass", jx, servicesMainContainerId);
+        createDiv.fCreateTag("div", "servicesContainer", "servicesContainerClass", jx, ulContainerId);
         //let servicesContainerId = $("#servicesContainer" + "Id_" + jx);
         let servicesContainerId = document.getElementById("servicesContainer" + "Id_" + jx);
         servicesContainerId.innerHTML = services.introTitle;
@@ -51,10 +55,10 @@ const fServicesListAjax = () => {
 
         let ul = document.createElement('ul');
         ul.className = "servicesULClass";
-         $(ul).appendTo(servicesMainContainerId); //servicesMainContainerId servicesContainerId
+         $(ul).appendTo(ulContainerId); //ulContainerId servicesContainerId
         let servicesULIdHeight = $("ul")[0].scrollHeight
 
-        //  createDiv.fCreateTag("UL", "servicesUL", "servicesULClass", jx, servicesMainContainerId);
+        //  createDiv.fCreateTag("UL", "servicesUL", "servicesULClass", jx, ulContainerId);
         //  let servicesULId = $("#servicesUL" + "Id_" + jx);
         //  let servicesULIdHeight = servicesULId.height();
           //console.log("servicesULIdHeight: ",servicesULIdHeight);
@@ -67,7 +71,7 @@ const fServicesListAjax = () => {
             ji++;
 
             /**----- Using DIV -----**/
-            // createDiv.fCreateTag("div", "servicesList", "servicesListClass", ji, servicesMainContainerId);
+            // createDiv.fCreateTag("div", "servicesList", "servicesListClass", ji, ulContainerId);
             // let servicesListId = document.getElementById("servicesListId_" + ji);
             // //let servicesListId = $("#servicesListId_" + ji);
             // servicesListId.innerHTML = servicesList.services;
@@ -75,13 +79,19 @@ const fServicesListAjax = () => {
             // // console.log("servicesList.services: ",servicesList.services);
 
             /**----- Using UL & LI -----**/
-            let li = document.createElement('li');
+            li = document.createElement('li');
             //$(li).appendTo(servicesULId);
             $(li).appendTo(ul);
             li.innerHTML=li.innerHTML + servicesList.services;
             /**----- Getting the LI height -----**/
             let servicesLIIdHeight = $("li")[0].scrollHeight
-            console.log("servicesLIIdHeight: ",servicesLIIdHeight);
+            //console.log("servicesLIIdHeight: ",servicesLIIdHeight);
+
+            // li.css({
+            //     "width" : "50%"
+            // })
+            //li.style.width = "30%";
+            fIlScreenResize();
 
             // let ulHeight = (servicesLIIdHeight * ji)/3;
             // console.log("ulHeight: ",ulHeight);
@@ -102,9 +112,48 @@ const fServicesListAjax = () => {
   })
 }
 
+let fIlScreenResize = () => {
+    let mainContainerWidth = mainContainer.width();
+    console.log("mainContainerWidth: ", mainContainerWidth);
+    let li = $("li")
+    let ulContainerClass = $(".ulContainerClass");
+    if(mainContainerWidth > 1000){
+        li.css({
+            "width": "25%"
+        })
+        ulContainerClass.css({
+            "height": "280px"
+        })
+    } else if(mainContainerWidth <= 720 && mainContainerWidth > 450){
+        li.css({
+            "width": "50%"
+        })
+        ulContainerClass.css({
+            "height": "400px"
+        })
+    } else if (mainContainerWidth <= 450){
+        li.css({
+            "width": "80%"
+        })
+        ulContainerClass.css({
+            "height": "640px"
+        })
+    } else {
+        li.css({
+            "width": "30%"
+        })
+        ulContainerClass.css({
+            "height": "340px"
+        })
+    }
+}
+let fServicesListAnim = () => {
+    fIlScreenResize();
+}
 
 /**-----------=====| EXPORTS |=====-----------**/
 module.exports.fServicesListAjax = fServicesListAjax;
+module.exports.fServicesListAnim = fServicesListAnim;
 
 
 }());

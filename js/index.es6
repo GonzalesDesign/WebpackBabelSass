@@ -11,11 +11,11 @@
   "use strict";
 
 /**-----------=====| DOM CACHING |=====-----------**/
-let mainContainer = $(".mainContainer");
-let landingPageContainer = $(".landingPageContainer");
-let menuNavClass = $(".menuNavClass");
-let menuNavClassId = $("#menuNavClassId");
-let landingPageDescriptionId = $("#landingPageDescriptionId")
+// let mainContainer = $(".mainContainer");
+// let landingPageContainer = $(".landingPageContainer");
+// let menuNavClass = $(".menuNavClass");
+// let menuNavClassId = $("#menuNavClassId");
+// let landingPageDescriptionId = $("#landingPageDescriptionId")
 
 /**-----------=====| IMPORT | REQUIRE |=====-----------**/
  /** DESCRIPTIONS:
@@ -26,45 +26,69 @@ let landingPageDescriptionId = $("#landingPageDescriptionId")
  let createDiv = new createElem.CreateElementAny();
 
 const servicesList = require('./servicesList.es6');
+/**----------===| Invoke fServicesListAjax function from servicesList.es6 |===----------**/
+servicesList.fServicesListAjax();
+servicesList.fServicesListAnim();
 
- const fLandingPageAjax = () => {
-   let promise = $.get("./js/json/landingPage.json");
-   promise.then(function(data) {
-     let jx = 0;
-     let ji = 0;
-     for (let introData of data.LandingPageContent) {
-        createDiv.fCreateTag("div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass);
-        let menuNavContainerId = document.getElementById("menuNavContainer" + "Id_" + jx);
+const landingPage = require('./landingPage.es6');
+landingPage.fLandingPageAjax();
+//landingPage.fLandingPageAnim();
+//import fLandingPageAnim from './landingPage.es6';
+// import cube from './landingPage.es6';
+// console.log(cube()); // 27
 
-        /**-----| Menu Navigation |-----**/
-        for(let menus of introData.mainMenuNavs){
-            ji++;
-            console.log("menus.menu: ", menus.menu);
-            createDiv.fCreateTag("div", "menuNav", "menuNavClass", ji, menuNavContainerId);
-            let menuNavId = document.getElementById("menuNav" + "Id_" + ji);
-            menuNavId.innerHTML = menus.menu;
-        }
+/**-----------=====| REQUIRE : RESPONSES.ES6 |=====-----------**/
+const responsesSection = require('./responses.es6');
+responsesSection.fResponsesAjax();
 
-        /**-----| Landing Page Description |-----**/
-       createDiv.fCreateTag("div", "landingPage", "landingPageClass", jx, landingPageDescriptionId);
-       let landingPageId = document.getElementById("landingPage" + "Id_" + jx);
-       //let x = $("#landingPage" + "Id_" + jx);
-       let strng = introData.landingPageDescription;
-       let subStrng = strng.substr(0, 700);
-       landingPageId.innerHTML = subStrng;
-     }
+let fOnWindowResize = function() {
+    //console.log(landingPage.fLandingPageAjax.menuNavContainerId);
+    //console.log(landingPage.mainContainer)
+    landingPage.fLandingPageAnim();
+    servicesList.fServicesListAnim();
+}
 
-   })
- };
+$(window).on('resize', fOnWindowResize);
 
- fLandingPageAjax();
+
+ // const fLandingPageAjax = () => {
+ //   let promise = $.get("./js/json/landingPage.json");
+ //   promise.then(function(data) {
+ //     let jx = 0;
+ //     let ji = 0;
+ //     for (let introData of data.LandingPageContent) {
+ //        createDiv.fCreateTag("div", "menuNavContainer", "menuNavContainerClass", jx, menuNavClass);
+ //        let menuNavContainerId = document.getElementById("menuNavContainer" + "Id_" + jx);
+ //
+ //        /**-----| Menu Navigation |-----**/
+ //        for(let menus of introData.mainMenuNavs){
+ //            ji++;
+ //            console.log("menus.menu: ", menus.menu);
+ //            createDiv.fCreateTag("div", "menuNav", "menuNavClass", ji, menuNavContainerId);
+ //            let menuNavId = document.getElementById("menuNav" + "Id_" + ji);
+ //            menuNavId.innerHTML = menus.menu;
+ //        }
+ //
+ //        /**-----| Landing Page Description |-----**/
+ //       createDiv.fCreateTag("div", "landingPage", "landingPageClass", jx, landingPageDescriptionId);
+ //       let landingPageId = document.getElementById("landingPage" + "Id_" + jx);
+ //       //let x = $("#landingPage" + "Id_" + jx);
+ //       let strng = introData.landingPageDescription;
+ //       let subStrng = strng.substr(0, 700);
+ //       landingPageId.innerHTML = subStrng;
+ //     }
+ //
+ //   })
+ // };
+
+ //fLandingPageAjax();
 
     // const twoKolumns = require('./twoColumns');
     // let oneThirdTest = new twoKolumns.ThreeColumnsClass();
     // oneThirdTest.fThreeColumns(gdContainerWidth);
 
- console.log("mainContainer: ", mainContainer);
- console.log("createElem: ", createElem);
+ //console.log("mainContainer: ", mainContainer);
+ //console.log("createElem: ", createElem);
 
 //let require = require(".require");
 /**----------=====| anim |=====----------**/
@@ -74,14 +98,14 @@ const servicesList = require('./servicesList.es6');
   // const animationFunctions = "animationFunctions";
   // console.log("animationFunctions: ", animationFunctions);
 
-  let containerId = $("#containerId");
-
-
-  containerId.css({
-      //"width" : "auto",
-      //"height" : "200px",
-      //"border" : "1px solid Cyan"
-  })
+  // let containerId = $("#containerId");
+  //
+  //
+  // containerId.css({
+  //     //"width" : "auto",
+  //     //"height" : "200px",
+  //     //"border" : "1px solid Cyan"
+  // })
   //anim.fAnimateHeightWidth(containerId, "auto", 500, 1);
 
 /**----------=====| CreateElementAny Class |=====----------**/
@@ -149,7 +173,6 @@ const servicesList = require('./servicesList.es6');
  /**----------===| INVOKE FUNCTION |===----------**/
  //fIntroAjax();
 
-/**----------===| Invoke fServicesListAjax function from servicesList.es6 |===----------**/
-servicesList.fServicesListAjax();
+
 
 }());

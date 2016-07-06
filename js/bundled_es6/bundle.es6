@@ -55,7 +55,7 @@
 
 	(function() { /*IIFE:Immediately-Invoked Function Expression*/
 	  "use strict";
-
+	  
 	/**-----------=====| DOM CACHING |=====-----------**/
 	let mainContainer = $(".mainContainer");
 	let landingPageContainer = $(".landingPageContainer");
