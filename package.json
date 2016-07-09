@@ -4,16 +4,17 @@
   "description": "Webpack Language-Babel Sass Template",
   "main": "js/index.es6",
   "scripts": {
-    "comment": "WEBPACKING HAPPENS HERE!",
     "buildX": "babel js/index.es6 -d dist2",
-    "start": "webpack js/index.es6 ./js/bundled_es6/bundle.es6",
+    "startX": "webpack js/index.es6 ./js/bundled_es6/bundle.es6",
     "startX": "webpack-dev-server ./js/index.es6",
     "testX": "echo \"Error: no test specified\" && exit 1"
   },
   "scripts": {
-    "start": "webpack js/index.es6 ./js/bundled_es6/bundle.es6",
+    "start": "webpack-dev-server ./js/index.es6",
+    "startX": "webpack js/index.es6 ./js/bundled_es6/bundle.es6",
     "buildX" : "babel --presets es2015 js/index.es6 -d dist2",
-    "build" : "babel --presets es2015 js/bundled_es6/bundle.es6 -d dist2"
+    "build" : "babel --presets es2015 js/bundled_es6/bundle.es6 -d dist2",
+    "instruction" : "npm start to webpacked files then npm run build to babelized webpacked file"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",

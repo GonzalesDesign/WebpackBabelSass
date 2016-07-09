@@ -4,6 +4,7 @@
 			"title": "LandingPageTitle",
 			"introTitle": "Landing Page Title",
             "intoSubTitle": "Landing Page Sub-Title",
+			"companyLogo" : "logo.jpg",
             "posterImages":[
                 {"image":"image_01.jpg", "imgDescription": "Image 01 Short Description"},
                 {"image":"image_02.jpg", "imgDescription": "Image 02 Short Description"},

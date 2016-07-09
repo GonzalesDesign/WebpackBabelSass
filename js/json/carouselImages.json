@@ -1,0 +1,18 @@
+{
+	"ContentDataMain": [
+		{
+			"title": "ContentData",
+			"introTitle": "Content Data Intro",
+            "intoSubTitle": "Content Data Intro Sub-Title",
+            "carouselIntervalTimer":"0",
+			"images": [
+                {"imgName": "imagesTemp_01.jpg", "imgTitle": "Lady Eagle", "imgDescription": "Spread them eagle"},
+                {"imgName": "imagesTemp_02.jpg", "imgTitle": "Asian Beauty", "imgDescription": "Red Ducatti"},
+                {"imgName": "imagesTemp_03.jpg", "imgTitle": "Asian Beauty", "imgDescription": "Red Ducatti"},
+                {"imgName": "imagesTemp_04.jpg", "imgTitle": "Asian Beauty", "imgDescription": "Red Ducatti"},
+                {"imgName": "imagesTemp_06.jpg", "imgTitle": "Asian Beauty", "imgDescription": "Red Ducatti"},
+                {"imgName": "imagesTemp_07.jpg", "imgTitle": "Asian Beauty", "imgDescription": "Red Ducatti"}
+            ]
+		}
+	]
+}

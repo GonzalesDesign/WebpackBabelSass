@@ -3,17 +3,13 @@
  * Developer: rolandolloyd@gmail.com
  * Copyright © 2015 GonzalesDesign
  * Platform: ES2015, Webpack, Babel & Sass
- * Module: CreateElementClass
+ * Module: Create Carousel : Bootstrap
  ***********************************************/
 
 (function() { /*IIFE:Immediately-Invoked Function Expression*/
-	"use strict";
 
-	/**----------=====| CreateElementAny Class |=====----------**/
-	/** Description:
-	 ** Class template for creating basic "a" tag.
-	 *********************************************************/
-	class CreateElementAny {
+	/**----------=====| Create Carousel Class |=====----------**/
+	class CreateCarousel {
 		constructor() {}
 
 		/** Generic method for creating a tag element **/
