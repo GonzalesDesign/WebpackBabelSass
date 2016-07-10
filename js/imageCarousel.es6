@@ -23,9 +23,11 @@
 		/** Generic method for creating a tag element **/
 		fCreateCarousel(itemId, imahe, titolo, deskription, counter, intervalTimer) {
 			//fCreateCarousel(images.imgName, images.imgTitle, images.imgDescription, i, appendedTo)
-			/**-----| Create new LI(s) |-----**/
+
+			/**-----| Create new LI(s) for the Indicators |-----**/
 			let listItem = document.createElement('li');
 			listItem.className = "";
+			listItem.id = "listItemId";
 			listItem.setAttribute("data-target", "#modalCarousel");
 			listItem.setAttribute("data-slide-to", counter);
 			$(listItem).appendTo(".carousel-indicators");
@@ -81,7 +83,7 @@
 
 			/**-----| Activate the 'active' Class for the selected Id |-----**/
 			//let intervalTimer = 6000; //4000; //false;
-			if (itemDiv.id === itemId + 1) {
+			if (itemDiv.id === itemId + 0) {
 				console.log("itemDiv.id: ", itemDiv.id);
 				$(".item").addClass('active');
 				$(listItem).addClass('active');
@@ -110,8 +112,9 @@
 				for (let content of data.ContentDataMain) {
 					/**-----| Populate carousel container |-----**/
 					for (let images of content.images) {
+						//ji++;
+						createKarousel.fCreateCarousel("imgCarouselId", images.imgName, images.imgTitle, images.imgDescription, ji, (content.carouselIntervalTimer * 1000));
 						ji++;
-						createKarousel.fCreateCarousel("imgCarouselId", images.imgName, images.imgTitle, images.imgDescription, ji, (content.carouselIntervalTimer * 1000))
 
 					}
 				}

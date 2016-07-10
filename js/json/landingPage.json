@@ -11,12 +11,12 @@
                 {"image":"image_03.jpg", "imgDescription": "Image 03 Short Description"}
             ],
 			"mainMenuNavs": [
-                {"menu": "Home", "link": "<a href='#'>go here</a>"},
-                {"menu": "Services", "link": "<a href='#'>go here</a>"},
-                {"menu": "Testimonials", "link": "<a href='#'>go here</a>"},
-                {"menu": "News", "link": "<a href='#'>go here</a>"},
-                {"menu": "Experience", "link": "<a href='#'>go here</a>"},
-                {"menu": "Contact", "link": "<a href='#'>go here</a>"}
+                {"menu": "Home", "link": "<a href='#Home'>go here</a>"},
+                {"menu": "Services", "link": "<a href='#Services'>go here</a>"},
+                {"menu": "Testimonials", "link": "<a href='#Testimonials'>go here</a>"},
+                {"menu": "News", "link": "<a href='#News'>go here</a>"},
+                {"menu": "Experience", "link": "<a href='#Experience'>go here</a>"},
+                {"menu": "Contact", "link": "<a href='#Contact'>go here</a>"}
             ],
 			"landingPageDescription" : "<div class='introParag1'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div><div class='introParag2'>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. </div><div class='introParag1'>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). </div>"
 		}

@@ -55,9 +55,13 @@
 				for (let menus of introData.mainMenuNavs) {
 					ji++;
 					console.log("introData.menu: ", menus.menu);
-					createDiv.fCreateTag("div", "menuNav", "menuNavClass", ji, menuNavContainerId);
-					let menuNavId = document.getElementById("menuNav" + "Id_" + ji);
-					menuNavId.innerHTML = menus.menu;
+					createDiv.fCreateTag("div", "menu", "menuClass", ji, menuNavContainerId);
+					let menuId = document.getElementById("menu" + "Id_" + ji);
+					menuId.innerHTML = menus.menu;
+
+					menuId.onclick = menus.link;
+
+					//menuId.setAttribute("name", "#" + menus.menu);
 				}
 
 				/**-----| Images Carousel |-----**/
