@@ -4,14 +4,13 @@
 			"title": "ContentData",
 			"introTitle": "Content Data Intro",
             "intoSubTitle": "Content Data Intro Sub-Title",
-            "carouselIntervalTimer":"0",
+            "carouselIntervalTimer":"10",
 			"images": [
-                {"imgName": "imagesTemp_03.jpg", "imgTitle": "Jill Tucker Nursing Services", "imgDescription": "Short Description Goes Here"},
-                {"imgName": "imagesTemp_06.jpg", "imgTitle": "Jill Tucker Nursing Services", "imgDescription": "Short Description Goes Here"},
-				{"imgName": "imagesTemp_07.jpg", "imgTitle": "Jill Tucker Nursing Services", "imgDescription": "Short Description Goes Here"},
-				{"imgName": "imagesTemp_08.jpg", "imgTitle": "Jill Tucker Nursing Services", "imgDescription": "Short Description Goes Here"},
-				{"imgName": "imagesTemp_09.jpg", "imgTitle": "Jill Tucker Nursing Services", "imgDescription": "Short Description Goes Here"},
-				{"imgName": "imagesTemp_10.jpg", "imgTitle": "Jill Tucker Nursing Services", "imgDescription": "Short Description Goes Here"},
+                {"imgName": "imagesTemp_06.jpg", "imgTitle": "Private Hospital Care", "imgDescription": "Short Description Goes Here"},
+				{"imgName": "imagesTemp_07.jpg", "imgTitle": "Home Visits by Nurse or CNA", "imgDescription": "Short Description Goes Here"},
+				{"imgName": "imagesTemp_08.jpg", "imgTitle": "Orthopedic Surgery Recovery", "imgDescription": "Short Description Goes Here"},
+				{"imgName": "imagesTemp_09.jpg", "imgTitle": "Elder Care and Senior Patient Care", "imgDescription": "Short Description Goes Here"},
+				{"imgName": "imagesTemp_10.jpg", "imgTitle": "Alzheimer's & Dementia Patients Care", "imgDescription": "Short Description Goes Here"},
                 {"imgName": "imagesTemp_11.jpg", "imgTitle": "Jill Tucker Nursing Services", "imgDescription": "Short Description Goes Here"}
             ]
 		}
