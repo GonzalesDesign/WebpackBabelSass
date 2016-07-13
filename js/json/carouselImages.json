@@ -4,7 +4,7 @@
 			"title": "ContentData",
 			"introTitle": "Content Data Intro",
             "intoSubTitle": "Content Data Intro Sub-Title",
-            "carouselIntervalTimer":"10",
+            "carouselIntervalTimer":"0",
 			"images": [
                 {"imgName": "imagesTemp_06.jpg", "imgTitle": "Private Hospital Care", "imgDescription": "Short Description Goes Here"},
 				{"imgName": "imagesTemp_07.jpg", "imgTitle": "Home Visits by Nurse or CNA", "imgDescription": "Short Description Goes Here"},

@@ -43,15 +43,15 @@
 				createDiv.fCreateTag("div", "healthTitleContainer", "healthTitleContainerClass", jx, healthContainerId);
 				let healthTitleContainerId = document.getElementById("healthTitleContainer" + "Id_" + jx);
 				healthTitleContainerId.innerHTML = health.introTitle;
-				console.log("healthTitleContainerId: ", healthTitleContainerId);
-				console.log("health.introTitle: ", health.introTitle);
+				//console.log("healthTitleContainerId: ", healthTitleContainerId);
+				//console.log("health.introTitle: ", health.introTitle);
 
 				/**-----| Create div to hold Quote |-----**/
 				createDiv.fCreateTag("div", "healthQuoteContainer", "healthQuoteContainerClass", jx, healthContainerId);
 				let healthQuoteContainerId = document.getElementById("healthQuoteContainer" + "Id_" + jx);
 				healthQuoteContainerId.innerHTML = health.quote[jx].healthQuote;
-				console.log("healthQuoteContainerId: ", healthQuoteContainerId);
-				console.log("health.quote[jx].healthQuote: ", health.quote[jx].healthQuote);
+				//console.log("healthQuoteContainerId: ", healthQuoteContainerId);
+				//console.log("health.quote[jx].healthQuote: ", health.quote[jx].healthQuote);
 			}
 		})
 	};

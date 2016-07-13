@@ -19,7 +19,7 @@
                 {"menu": "Experience", "link": "<a href='#Experience'>go here</a>"},
                 {"menu": "Contact", "link": "<a href='#Contact'>go here</a>"}
             ],
-			"landingPageDescription" : "<div class='introParag1'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</div><div class='introParag2'>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. </div><div class='introParag1'>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). </div>"
+			"landingPageDescription" : "<p><b>Jill Tucker Nursing is an in home health care service offering the highest quality private nurses and health care professionals to a discerning clientele.</b></p><p>Jill Tucker is a Registered Nurse with over 30 years of experience providing nursing care to prestigious families and distinguished individuals in New York City and Washington DC. Over the course of her career, working alongside premier surgeons in the highest ranking medical offices, she has carefully hand picked and established her specialized staff of healthcare professionals. </p><p><b>Private duty nurses and licensed professionals are available for short-term and in home nurse cases, for long-term ongoing assignments, and for hotel patient visits. </b></p>"
 		}
 	]
 }

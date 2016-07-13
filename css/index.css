@@ -10,6 +10,37 @@
   font-family: 'DINAlternateBold';
   src: url("/fonts/DIN Alternate Bold.ttf") format("ttf"); }
 
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 150%;
+  color: Grey; }
+
+.infoBanner {
+  width: 100%;
+  display: inline-block;
+  margin-top: 30px;
+  border: 0px solid Green; }
+
+.contactInfo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  color: #16579a;
+  width: auto;
+  float: left;
+  vertical-align: middle;
+  border: 0px solid Green; }
+
+.fbIcon {
+  height: 30px;
+  width: 30px;
+  float: right;
+  background: url("/images/fbLogo.jpg") center center no-repeat;
+  background-size: cover;
+  border: 0px solid Green; }
+
 .mainContainer {
   height: auto;
   margin-right: auto;
@@ -19,7 +50,7 @@
 
 .landingPageContainer {
   text-align: center;
-  border: 1px solid Orange; }
+  border: 0px solid Orange; }
 
 .logoContainerClassX {
   height: auto;
@@ -30,8 +61,42 @@
   width: 100%;
   border: 0px solid Orange; }
 
+.logoSubTitleClass {
+  width: 100%;
+  height: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 90%;
+  color: #0f98ab;
+  margin-left: auto;
+  margin-right: auto;
+  top: -40px;
+  position: relative;
+  border: 0px solid yellowGreen; }
+
+.logoAddressClass {
+  font-family: "Open-Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.4em;
+  list-style: 250%;
+  /* width: 95%; */
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -34px;
+  border: 0px solid Orange; }
+
 .landingPageDescription {
-  text-align: center; }
+  text-align: center;
+  width: 95%;
+  font-size: 1.2em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+  border: 0px solid Orange; }
 
 .introParag1 {
   font-family: "DINAlternateBold", sans-serif;
@@ -50,20 +115,25 @@
 .menuNavContainerClass {
   margin-right: auto;
   margin-left: auto;
-  border: 1px solid Green; }
+  border: 0px solid Green; }
 
-.menuNavClass {
+.menuClass {
   font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
-  font-size: 1.2em;
+  font-weight: 600;
+  font-size: 1.8em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   display: inline-block;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 34px;
+  padding-right: 34px;
   color: Grey;
-  border: 1px solid Orange; }
+  cursor: pointer;
+  border: 0px solid Orange; }
+
+.menuClass:hover {
+  color: #0f98ab; }
 
 h1 {
   font-family: "Oswald", sans-serif;
@@ -92,167 +162,46 @@ h4 {
   font-weight: 400;
   font-size: 1.5em;
   margin-top: 10px;
-  color: grayrgb(56, 60, 60);
+  color: #383c3c;
   border: 1px solid yellowGreen; }
 
 #subHead {
   padding-left: 20px; }
 
 p {
-  font-family: "Merriweather", serif;
-  font-weight: 300;
-  font-size: 1em;
-  margin-top: 10px;
-  color: Red; }
-
-.p2 {
-  font: italic bold 18px/30px Georgia, serif;
-  width: 50%; }
-
-/**-----|  |-----**/
-/**-----| SERVICES |-----**/
-.ulContainerClass {
-  height: 350px;
-  background-color: #e2e3e3; }
-
-.servicesContainerX {
-  width: auto;
-  height: auto;
-  text-align: center;
-  font-family: 'PT Sans Narrow', sans-serif;
-  font-weight: 300;
-  font-size: 3em;
-  text-transform: uppercase;
-  margin-top: 10px;
-  color: #16579a;
-  border: 1px solid yellowGreen; }
-
-.servicesContainerClass {
-  width: auto;
-  height: auto;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: 300;
-  font-size: 3em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #16579a;
-  margin-top: 10px;
-  padding-top: 20px;
-  padding-bottom: 30px;
-  border: 0 solid yellowGreen; }
-
-.servicesListClass {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  font-size: 1.5em;
-  margin-top: 1px;
-  color: #383c3c;
-  border: 1px solid yellowGreen; }
-
-.servicesULClass {
-  border: 0 solid Purple; }
-
-li {
-  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.2em;
-  font-weight: 300;
-  display: block;
-  width: 30%;
-  float: left;
-  border: 0 solid yellowGreen; }
+  line-height: 150%;
+  margin-top: 30px;
+  color: Grey; }
 
-/**-----| RESPONSES |-----**/
-.responseTitleContainerClass {
-  width: auto;
-  height: auto;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  font-size: 3em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #16579a;
-  margin-top: 10px;
-  padding-top: 20px;
-  padding-bottom: 30px;
-  z-index: 101;
-  background: url("../images/imagesTemp_05.jpg") no-repeat center center;
-  background-size: 100%;
-  border: 0 solid yellowGreen; }
-
-.testimonialsContainerClass {
-  width: 80%;
-  height: auto;
-  margin-right: auto;
-  margin-left: auto;
-  font-family: 'Helvetica', sans-serif;
-  font-weight: 300;
-  font-size: 1.2em;
-  text-align: center;
-  font-style: italic;
-  padding-top: 20px;
-  padding-bottom: 20px; }
-
-/**-----| HEALTH CARE |-----**/
-.healthMainContainerClass {
-  height: auto;
-  background-color: #e2e3e3;
-  border: 0 solid yellowGreen; }
-
-.healthContainerClass {
-  height: auto;
-  width: 80%;
-  margin-right: auto;
-  margin-left: auto;
-  border: 0 solid Red; }
-
-.healthTitleContainerClass {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  font-size: 3em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #16579a;
-  margin-top: 10px;
-  padding-top: 20px;
-  padding-bottom: 30px; }
-
-.healthQuoteContainerClass {
-  font-family: 'Helvetica', sans-serif;
-  font-weight: 300;
-  font-size: 1.2em;
-  text-align: center;
-  font-style: italic;
-  padding-top: 20px;
-  padding-bottom: 20px; }
-
-.additionalInfo {
-  padding-top: 20px;
-  font-style: normal;
-  border: 0 solid Red; }
-
+/**-----|  |-----**/
 /**-----| CAROUSEL |-----**/
 #modalCarousel {
   width: 100%; }
 
 .active {
+  width: 0px;
   color: #0f98ab; }
 
 .carousel-indicators {
-  /*background-color: yellowGreen;*/
-  left: 50%;
-  border: 1px solid Grey; }
+  left: 0px;
+  top: 90%;
+  margin-left: 0px;
+  width: 100%;
+  border: 0px solid #0f98ab; }
 
-.carousel-indicators li {
-  border: 1px solid #0f98ab;
+#listItemId {
   border-radius: 10px;
   width: 14px;
   height: 14px;
-  margin: 10px; }
+  margin: 10px;
+  border: 1px solid #0f98ab; }
 
 .carousel-indicators .active {
   width: 18px;
   height: 18px;
-  margin: 10px;
   background-color: #0f98ab; }
 
 .item {
@@ -274,34 +223,263 @@ li {
 .titleDescriptionBoxClass {
   width: 100%;
   position: absolute;
-  top: 50%; }
+  top: 65%;
+  background-color: rgba(250, 250, 250, 0.5);
+  padding-top: 30px;
+  padding-bottom: 40px; }
 
 .carouselTitleBoxClass {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3em;
+  font-weight: 300;
   /*position: absolute;*/
   /*top: 50%;*/
   text-align: center;
+  line-height: 90%;
   padding-left: 20px;
   /* margin-left: auto; */
   /* margin-right: auto; */
   /* float: left; */
-  color: #1b2324;
-  font-family: "Oswald", sans-serif;
-  font-size: 4em;
-  border: 1px solid grey; }
+  color: #16579a;
+  border: 0px solid grey; }
 
 .carouselDescriptionBoxClass {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4em;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   /*position: absolute;*/
   /*top: 60%;*/
-  text-align: center;
   padding-left: 20px;
+  padding-top: 8px;
   /* margin-left: auto; */
   /* margin-right: auto; */
   /* float: left; */
-  color: Grey;
-  font-family: "Open Sans", sans-serif;
-  font-size: 2em;
-  border: 1px solid yellow; }
+  color: #16579a;
+  border: 0px solid yellow; }
 
+/**-----| SERVICES |-----**/
+.ulContainerClass {
+  height: auto;
+  background-color: #f2f2f2;
+  padding-bottom: 20px;
+  overflow: hidden;
+  border: 0px solid Purple; }
+
+.servicesContainerX {
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: #16579a;
+  border: 1px solid yellowGreen; }
+
+.servicesContainerClass {
+  width: auto;
+  height: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #16579a;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border: 0 solid yellowGreen; }
+
+.servicesListClassX {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  margin-top: 1px;
+  color: #383c3c;
+  border: 1px solid yellowGreen; }
+
+.servicesULClass {
+  border: 0px solid Purple;
+  font-size: 1.2em;
+  line-height: 150%;
+  padding-left: 0px; }
+
+.servicesULClass li {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 150%;
+  display: block;
+  width: 30%;
+  float: left;
+  padding-left: 40px;
+  padding-right: 20px;
+  border: 0px solid yellowGreen; }
+
+.iconMainContainerClass {
+  height: auto;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border: 0px solid #0f98ab; }
+
+.icon3ColumnsContainerClass {
+  height: auto;
+  width: 100%;
+  display: inline-block;
+  top: 30%;
+  position: relative;
+  border: 0px solid Grey; }
+
+.iconClass {
+  height: auto;
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 0px solid Red; }
+
+.iconImageClass {
+  width: 120px;
+  height: 113px;
+  margin-left: auto;
+  margin-right: auto;
+  float: left;
+  background-color: Grey;
+  border: 0px solid Green; }
+
+.iconTitleClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 1em;
+  color: Grey;
+  float: left;
+  position: relative;
+  width: 55%;
+  height: auto;
+  top: 30px;
+  padding-left: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px solid yellowGreen; }
+
+/**-----| RESPONSES |-----**/
+.responsesContainerClass {
+  background: url("../images/arrowDownBG.jpg") no-repeat top center;
+  background-size: 100% 40%; }
+
+.responseTitleContainerClass {
+  width: auto;
+  height: auto;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  color: #16579a;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-size: 100%;
+  border: 0 solid yellowGreen; }
+
+.testimonialsContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: center;
+  font-style: italic;
+  width: 80%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto; }
+
+/**-----| HEALTH CARE |-----**/
+.healthMainContainerClass {
+  height: auto;
+  background-color: #f2f2f2;
+  border: 0 solid yellowGreen; }
+
+.healthContainerClass {
+  height: auto;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  border: 0 solid Red; }
+
+.healthTitleContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  color: #16579a;
+  padding-top: 40px;
+  padding-bottom: 20px; }
+
+.healthQuoteContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: center;
+  font-style: italic;
+  padding-bottom: 60px; }
+
+.nameClass {
+  font-size: 1.3em;
+  font-style: normal; }
+
+.additionalInfo {
+  padding-top: 20px;
+  font-style: normal;
+  border: 0 solid Red;
+  font-size: 1.2em;
+  line-height: 150%; }
+
+/**-----| ABOUT |-----**/
+.aboutMainContainerClass {
+  height: auto;
+  border: 0 solid yellowGreen; }
+
+.aboutContainerClass {
+  height: auto;
+  width: 82%;
+  margin-right: auto;
+  margin-left: auto;
+  border: 0 solid Red; }
+
+.aboutTitleContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  color: #16579a;
+  padding-top: 40px;
+  padding-bottom: 20px; }
+
+.aboutDescriptionClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  text-align: center;
+  font-style: normal;
+  padding-bottom: 60px; }
+
+.paragSpace {
+  padding-bottom: 60px; }
+
+/**-----| FOOTER |-----**/
 /**-----| TEMP MISCELLANEOUS DEVELOPMENT PHASE |-----**/
 .bottomSpace {
   padding-top: 200px; }

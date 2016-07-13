@@ -6,7 +6,7 @@
  * Module: Create Carousel : Bootstrap
  ***********************************************/
 
-(function() { /*IIFE:Immediately-Invoked Function Expression*/
+(function() {/*IIFE:Immediately-Invoked Function Expression*/
 
 	/**----------=====| CreateCarousel Class |=====----------**/
 	/** Description:
@@ -84,15 +84,16 @@
 			/**-----| Activate the 'active' Class for the selected Id |-----**/
 			//let intervalTimer = 6000; //4000; //false;
 			if (itemDiv.id === itemId + 0) {
-				console.log("itemDiv.id: ", itemDiv.id);
+				//console.log("itemDiv.id: ", itemDiv.id);
 				$(".item").addClass('active');
 				$(listItem).addClass('active');
 				/**-----| Interval timer |-----**/
-				$('#modalCarousel').carousel({
-					interval: intervalTimer
-				});
+				$('#modalCarousel').carousel({interval: intervalTimer});
 			}
+			fCarouselResize();
 		}
+
+		//fCarouselResize();
 	};
 
 	let createKarousel = new CreateCarousel();
@@ -125,10 +126,37 @@
 	};
 
 	//fBuildCarousel();
+
+	let fCarouselResize = () => {
+		let browserWidth = window.innerWidth;
+		//console.log("browserWidth: ", browserWidth);
+		let carouselTitleBoxClass = $(".carouselTitleBoxClass");
+		let titleDescriptionBoxClass = $(".titleDescriptionBoxClass");
+
+		/*-----[ Largest Screen ]-----*/
+		if (browserWidth > 1170) {
+			carouselTitleBoxClass.css({"font-size": "3em"});
+			titleDescriptionBoxClass.css({"top": "65%", "padding-top": "30px", "padding-bottom": "40px"})
+			/*-----[ .container is between 1170 and 970 width ]-----*/
+		} else if (browserWidth <= 1170 && browserWidth > 970) {
+			carouselTitleBoxClass.css({"font-size": "3em"});
+			titleDescriptionBoxClass.css({"top": "65%", "padding-top": "30px", "padding-bottom": "40px"})
+			/*-----[ .container is between 970 and 750 width ]-----*/
+		} else if (browserWidth <= 970 && browserWidth > 750) {
+			carouselTitleBoxClass.css({"font-size": "3em"});
+			titleDescriptionBoxClass.css({"top": "65%", "padding-top": "20px", "padding-bottom": "20px"})
+			/*-----[ .container is between 750 and 550 width ]-----*/
+		} else if (browserWidth <= 750 && browserWidth > 550) {
+			carouselTitleBoxClass.css({"font-size": "2em"});
+			titleDescriptionBoxClass.css({"top": "65%", "padding-top": "20px", "padding-bottom": "20px"})
+			/*-----[ .container is less than 550 width ]-----*/
+		} else {
+			carouselTitleBoxClass.css({"font-size": "2em"});
+			titleDescriptionBoxClass.css({"top": "50%"})
+		}
+	}
 	/**-----------=====| EXPORTS |=====-----------**/
 	module.exports.fBuildCarousel = fBuildCarousel;
-
-
-
+	module.exports.fCarouselResize = fCarouselResize;
 
 }());

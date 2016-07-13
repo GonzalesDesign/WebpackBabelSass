@@ -36,8 +36,8 @@
 				createDiv.fCreateTag("div", "responseTitleContainer", "responseTitleContainerClass", jx, responsesContainerId);
 				let responseTitleContainerId = document.getElementById("responseTitleContainer" + "Id_" + jx);
 				responseTitleContainerId.innerHTML = responses.introTitle;
-				console.log("responseTitleContainerId: ", responseTitleContainerId);
-				console.log("responses.introTitle: ", responses.introTitle);
+				//console.log("responseTitleContainerId: ", responseTitleContainerId);
+				//console.log("responses.introTitle: ", responses.introTitle);
 
 				/**-----| Create div to hold the background image |-----**/
 				//  createDiv.fCreateTag("div", "responseBGImgContainer", "responseBGImgContainerClass", jx, responsesContainerId);

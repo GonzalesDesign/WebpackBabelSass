@@ -6,7 +6,7 @@
  * Module: Index
  ***********************************************/
 
-(function() { /*IIFE:Immediately-Invoked Function Expression*/
+(function() {/*IIFE:Immediately-Invoked Function Expression*/
 	"use strict";
 
 	/**-----------=====| DOM CACHING |=====-----------**/
@@ -24,35 +24,63 @@
 	const createElem = require('./CreateElementClass.es6');
 	let createDiv = new createElem.CreateElementAny();
 
+	/**----------===| MODULE: SERVICES |===----------**/
 	const servicesList = require('./servicesList.es6');
-	/**----------===| Invoke fServicesListAjax function from servicesList.es6 |===----------**/
 	servicesList.fServicesListAjax();
-	servicesList.fServicesListAnim();
+	// servicesList.fServicesListAnim();
+	// let fRoundToTwo = function(num) {
+	// 	return + (Math.round(num + "e+2") + "e-2");
+	// };
+	// let browserWidth = window.innerWidth;
+	// let halfBrowserWidth = browserWidth / 2;
+	// let thirdBrowserWidth = fRoundToTwo(browserWidth / 3);
+	// let quarterBrowserWidth = browserWidth / 4;
+	//servicesList.fServicesResize();
 
+	/**----------===| MODULE: LANDING PAGE |===----------**/
 	const landingPage = require('./landingPage.es6');
 	landingPage.fLandingPageAjax();
+	landingPage.fLandingPageAnim();
 	//landingPage.fLandingPageAnim();
 	//import fLandingPageAnim from './landingPage.es6';
 	// import cube from './landingPage.es6';
 	// console.log(cube()); // 27
 
-	/**-----------=====| REQUIRE : RESPONSES.ES6 |=====-----------**/
+	/**----------===| MODULE: IMAGE CAROUSEL |===----------**/
+	const imageCarousel = require('./imageCarousel.es6');
+	imageCarousel.fCarouselResize();
+
+	/**----------===| MODULE: RESPONSES |===----------**/
 	const responsesSection = require('./responses.es6');
 	responsesSection.fResponsesAjax();
 
-	/**-----------=====| REQUIRE : HEALTHCARE.ES6 |=====-----------**/
+	/**----------===| MODULE: HEALTH CARE |===----------**/
 	const halthCareSection = require('./healthCare.es6');
 	halthCareSection.fHealthCareAjax();
 
+	/**----------===| MODULE: ABOUT || EXPERIENCE |===----------**/
+	const aboutSection = require('./about.es6');
+	aboutSection.fAboutAjax();
+
+	/**----------===| FUNCTION: SCREEN RESIZE QUERIES |===----------**/
 	let fOnWindowResize = function() {
 		//console.log(landingPage.fLandingPageAjax.menuNavContainerId);
 		//console.log(landingPage.mainContainer)
 		//landingPage.fLandingPageAnim();
-		servicesList.fServicesListAnim();
+
+		//servicesList.fServicesListAnim();
+		//servicesList.fServicesListAjax();
+		servicesList.fServicesResize();
+
+		landingPage.fLandingPageAnim();
+
+		imageCarousel.fCarouselResize();
+
+		// let menuClassX = $(".menuClass");
+		// console.log("menuClassX: ", menuClassX);
 	}
 
 	$(window).on('resize', fOnWindowResize);
-
 
 	// const fLandingPageAjax = () => {
 	//   let promise = $.get("./js/json/landingPage.json");
@@ -83,16 +111,16 @@
 	//
 	//   })
 	// };
-
+	//
 	//fLandingPageAjax();
-
+	//
 	// const twoKolumns = require('./twoColumns');
 	// let oneThirdTest = new twoKolumns.ThreeColumnsClass();
 	// oneThirdTest.fThreeColumns(gdContainerWidth);
-
+	//
 	//console.log("mainContainer: ", mainContainer);
 	//console.log("createElem: ", createElem);
-
+	//
 	//let require = require(".require");
 	/**----------=====| anim |=====----------**/
 	//const TweenMax = require('gsap');
@@ -100,7 +128,7 @@
 	//
 	// const animationFunctions = "animationFunctions";
 	// console.log("animationFunctions: ", animationFunctions);
-
+	//
 	// let containerId = $("#containerId");
 	//
 	//
@@ -110,7 +138,7 @@
 	//     //"border" : "1px solid Cyan"
 	// })
 	//anim.fAnimateHeightWidth(containerId, "auto", 500, 1);
-
+	//
 	/**----------=====| CreateElementAny Class |=====----------**/
 	/** Description:
 	 ** Class template for creating basic "a" tag.
@@ -150,32 +178,30 @@
 	//console.log("Running webpack-dev-serverX");
 
 	const fIntroAjax = () => {
-			let promise = $.get("./js/json/contentData.json");
-			promise.then(function(data) {
-				let jx = 0;
-				for (let introData of data.GDSiteIntro) {
-					let container = $(".container");
-					//  let createElemAny = new CreateElementAny();
-					//  createElemAny.fCreateTag("div", "className", "title", jx, mainContainer)
-
-					//   let titleXId = $("#title" + "Id_" + jx); //set id
-					//   createElemAny.fCreateTag("p", "paragClass", "parag", jx, titleXId);
-					//let paragClass = $(".paragClass");
-					//let x = $("#parag" + "Id_" + jx); //set id
-					//let x = $("#paragId_jx"); //set id
-					//console.log("paragId: ", paragId);
-					//var x = document.getElementById('paragId_jx');
-					//   let x = document.getElementById("parag" + "Id_" + jx);
-					//   //console.log("x: ", x);
-					//   let strng = introData.codingThisSite;
-					//   let subStrng = strng.substr(0, 150);
-					//   x.innerHTML = subStrng + " ...more";
-				}
-			})
-		}
-		/**----------===| INVOKE FUNCTION |===----------**/
-		//fIntroAjax();
-
-
+		let promise = $.get("./js/json/contentData.json");
+		promise.then(function(data) {
+			let jx = 0;
+			for (let introData of data.GDSiteIntro) {
+				let container = $(".container");
+				//  let createElemAny = new CreateElementAny();
+				//  createElemAny.fCreateTag("div", "className", "title", jx, mainContainer)
+				//
+				//   let titleXId = $("#title" + "Id_" + jx); //set id
+				//   createElemAny.fCreateTag("p", "paragClass", "parag", jx, titleXId);
+				//let paragClass = $(".paragClass");
+				//let x = $("#parag" + "Id_" + jx); //set id
+				//let x = $("#paragId_jx"); //set id
+				//console.log("paragId: ", paragId);
+				//var x = document.getElementById('paragId_jx');
+				//   let x = document.getElementById("parag" + "Id_" + jx);
+				//   //console.log("x: ", x);
+				//   let strng = introData.codingThisSite;
+				//   let subStrng = strng.substr(0, 150);
+				//   x.innerHTML = subStrng + " ...more";
+			}
+		})
+	}
+	/**----------===| INVOKE FUNCTION |===----------**/
+	//fIntroAjax();
 
 }());

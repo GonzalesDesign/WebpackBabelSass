@@ -25,7 +25,10 @@
 				{"services": "hand and Foot Surgery", "link": "Link Here If There's Any"},
 				{"services": "Flexible Rates For Extended Care", "link": "Link Here If There's Any"},
 				{"services": "Breast Augmentation Recovery", "link": "Link Here If There's Any"},
-				{"services": "Contact", "link": "Link Here If There's Any"}
+				{"services": "Rehabilitation and Aftercare", "link": "Link Here If There's Any"},
+				{"services": "Direct Access to Nurse-Owner", "link": "Link Here If There's Any"},
+				{"services": "Bariatric Surgery Recovery", "link": "Link Here If There's Any"},
+				{"services": "Home Companion Care", "link": "Link Here If There's Any"}
             ],
 			"servicesImages":[
                 {"image":"iconHeart.jpg", "imgTitle": "Testimonials"},

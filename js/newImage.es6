@@ -19,16 +19,17 @@
 	class CreateNewImage {
 		constructor() {}
 			/**----------===| NEW IMAGE CREATION |===----------**/
-		fCreateNewImage(divNameId, jsonImage, bgImgSize) {
+		fCreateNewImage(divNameId, jsonImage, bgImgSize, bgColor) {
 			let myIntroImage = new Image();
 			let imagesPath = "./images/";
 			myIntroImage.src = imagesPath + jsonImage; //responses.responsesImages[2].image;
-			console.log("divNameId: ", divNameId);
-			console.log("myIntroImage.src: ", myIntroImage.src);
+			//console.log("divNameId: ", divNameId);
+			//console.log("myIntroImage.src: ", myIntroImage.src);
 			divNameId.css({
 				// "height": imgHeight,
 				// "width": imgWidth,
 				"background": "url(" + myIntroImage.src + ")  center center no-repeat",
+				"background-color": bgColor,
 				"background-size": bgImgSize, //"cover",
 				"position": "relative", //relative absolute
 				"float": "left",

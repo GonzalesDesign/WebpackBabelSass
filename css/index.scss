@@ -5,16 +5,25 @@
 * Platform: ES2015, Webpack, Babel & Sass
 * Module: SCSS to CSS
 ***********************************************/
-$LightGrey: rgb(226, 227, 227);
+$LightGrey: rgb(242, 242, 242);
 $Grey: Grey;
 $DarkGrey: rgb(27, 35, 36);
 $Red: Red;
 $YellowGreen: yellowGreen;
 $Orange: Orange;
 $Green: Green;
-$CyanishBlue: rgb(15, 152, 171);
+$Cyanish: rgb(15, 152, 171);
 $Blueish: rgb(22, 87, 154);
 $Purple: Purple;
+$BackgroundColor: rgba(250, 250, 250, .5);
+
+$titleTopLeading: 40px;
+$titleBottomLeading: 20px;
+$paragTopLeading: 10px;
+$paragBottomLeading: 60px;
+$CopyLeading:150%;
+$CopyFontSize:1.2em;
+
 @font-face {
   font-family: 'DINAlternateBold';
   src: url('/fonts/DIN Alternate Bold.ttf') format('ttf');
@@ -25,6 +34,39 @@ $Purple: Purple;
 //font-family: 'Source Sans Pro', sans-serif;
 //font-family: 'Dosis', sans-serif;
 //font-family: 'Open Sans Condensed', sans-serif;
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: $CopyFontSize;
+    line-height: $CopyLeading;
+    color: $Grey;
+}
+
+.infoBanner{
+    width: 100%;
+    display: inline-block;
+    margin-top: 30px;
+    border: 0px solid $Green;
+}
+.contactInfo{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: $Blueish;
+    width: auto;
+    float: left;
+    vertical-align: middle;
+    border: 0px solid $Green;
+}
+.fbIcon{
+    height: 30px;
+    width: 30px;
+    float: right;
+    background: url("/images/fbLogo.jpg") center center no-repeat;
+    background-size : cover;
+    border: 0px solid $Green;
+}
+
 .mainContainer {
   //width : 90%;
   height: auto;
@@ -32,8 +74,8 @@ $Purple: Purple;
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
-  //-webkit-box-shadow: 0px 0px 12px 3px rgba(25, 25, 25, 0.10);
-  //box-shadow: 0px 0px 20px 10px rgba(25, 25, 25, 0.10);
+  // -webkit-box-shadow: 0px 0px 12px 3px rgba(25, 25, 25, 0.10);
+  // box-shadow: 0px 0px 20px 10px rgba(25, 25, 25, 0.10);
   //background-color: #80d06b;
   //float: left;
   //border: 1px solid $Grey;
@@ -41,11 +83,11 @@ $Purple: Purple;
 .landingPageContainer {
   // font-family: "Merriweather", serif;
   // font-weight: 300;
-  // font-size: 1.2em;
+  // font-size: $CopyFontSize
   // margin-top: 10px;
   // color: $Grey;
   text-align: center;
-  border: 1px solid $Orange;
+  border: 0px solid $Orange;
 }
 .logoContainerClassX {
     height: auto;
@@ -57,20 +99,61 @@ $Purple: Purple;
     width: 100%;
     border: 0px solid $Orange;
 }
+.logoSubTitleClass{
+    width: 100%;
+    height: auto;
+    //font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 2.2em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 90%;
+    color: $Cyanish;
+    margin-left: auto;
+    margin-right: auto;
+    top: -40px;
+    //margin-top: 10px;
+    //padding-top: 20px;
+    //padding-bottom: 30px;
+    position: relative;;
+    border: 0px solid $YellowGreen;
+}
+.logoAddressClass {
+    font-family: "Open-Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.4em;
+    list-style: 250%;
+    //padding-top: 10px;
+    //text-align: center;
+    /* width: 95%; */
+    margin-left: auto;
+    margin-right: auto;
+    //padding: 30px;
+    position: relative;
+    top: -34px;
+    border: 0px solid $Orange;
+}
 .landingPageDescription {
-  text-align: center;
+    text-align: center;
+    width: 95%;
+    font-size: $CopyFontSize;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    border: 0px solid $Orange;
 }
 .introParag1 {
   font-family: "DINAlternateBold", sans-serif;
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: $CopyFontSize;
   padding-top: 10px;
   border: 0 solid $Orange;
 }
 .introParag2 {
   font-family: "Open-Sans", sans-serif;
   font-weight: 300;
-  font-size: 1.2em;
+  font-size: $CopyFontSize;
   padding-top: 10px;
   border: 0 solid $Orange;
 }
@@ -78,20 +161,27 @@ $Purple: Purple;
   //width: 80%;
   margin-right: auto;
   margin-left: auto;
-  border: 1px solid $Green;
+  //background-color: $LightGrey;
+  border: 0px solid $Green;
 }
-.menuNavClass {
+.menuClass {
   font-family: "Open Sans Condensed", sans-serif;
-  font-weight: 300;
-  font-size: 1.2em;
+  font-weight: 600;
+  font-size: 1.8em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   display: inline-block;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 34px;
+  padding-right: 34px;
   color: $Grey;
-  border: 1px solid $Orange;
+  cursor: pointer;
+  border: 0px solid Orange;
+  &:hover {
+    color: $Cyanish;
+  }
+  //padding: 20px;
 }
 h1 {
   font-family: "Oswald", sans-serif;
@@ -127,30 +217,133 @@ h4 {
   font-weight: 400;
   font-size: 1.5em;
   margin-top: 10px;
-  color: grayrgb(56, 60, 60);
+  color: rgb(56, 60, 60);
   border: 1px solid $YellowGreen;
 }
 #subHead {
   padding-left: 20px;
 }
 p {
-  //font-family: "Open Sans", sans-serif;
-  font-family: "Merriweather", serif;
+  font-family: "Open Sans", sans-serif;
+  //font-family: "Merriweather", serif;
   font-weight: 300;
-  font-size: 1em;
-  margin-top: 10px;
-  color: $Red;
+  font-size: $CopyFontSize;
+  line-height: $CopyLeading;
+  margin-top: 30px; //$paragTopLeading;
+  color: $Grey;
 }
-.p2 {
-  font: italic bold 18px/30px Georgia, serif;
-  width: 50%;
-}
+// .p2 {
+//   font: italic bold 18px/30px Georgia, serif;
+//   width: 50%;
+// }
 /**-----|  |-----**/
 #introParag1 {}
+
+/**-----| CAROUSEL |-----**/
+#modalCarousel{
+    width: 100%;
+}
+.active{
+    width: 0px;
+    color: $Cyanish;
+}
+.carousel-indicators{
+    //background-color: $BackgroundColor;
+    // margin-left: 0px;
+    left: 0px;
+    top: 90%;
+    margin-left: 0px;
+    width: 100%;
+    border: 0px solid $Cyanish;
+}
+// .carousel-indicators li{
+//     border: 1px solid $Cyanish;
+//     border-radius: 10px;
+//     width: 14px;
+//     height: 14px;
+//     margin: 10px;
+// }
+#listItemId{
+    border-radius: 10px;
+    width: 14px;
+    height: 14px;
+    margin: 10px;
+    border: 1px solid $Cyanish;
+}
+.carousel-indicators .active {
+    width: 18px;
+    height: 18px;
+    //margin: 10px;
+    background-color: $Cyanish;
+}
+.item{
+    width: 100%;
+    /*height = "auto";*/
+}
+.imgClass{
+    position : relative;
+    padding : 0px;
+    margin : 0px;
+    /*overflow   : hidden;
+    border       : 1px solid cyan;*/
+    /*width  : 100%;
+     height  : 100%;*/
+    min-width : 210px;
+    /*minHeight : 810px;*/
+    background-size : cover;
+}
+.titleDescriptionBoxClass{
+    width: 100%;
+    position: absolute;
+    top: 65%;
+    background-color: $BackgroundColor;
+    padding-top: 30px; //$paragTopLeading;
+    padding-bottom: 40px; //$paragBottomLeading;
+}
+.carouselTitleBoxClass{
+    //font-family: "Oswald", sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3em;
+    font-weight: 300;
+    //text-transform: uppercase;
+    //letter-spacing: 0.05em;
+    /*position: absolute;*/
+    /*top: 50%;*/
+    text-align: center;
+    line-height: 90%;
+    padding-left: 20px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* float: left; */
+    color: $Blueish;
+    border: 0px solid grey;
+}
+.carouselDescriptionBoxClass{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4em;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    /*position: absolute;*/
+    /*top: 60%;*/
+    padding-left: 20px;
+    padding-top: 8px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* float: left; */
+    //color: $Cyanish;
+    color: $Blueish;
+    border: 0px solid yellow;
+}
+
 /**-----| SERVICES |-----**/
 .ulContainerClass {
-  height: 350px;
+  height: auto; //350px;
   background-color: $LightGrey;
+  padding-bottom: 20px;
+  overflow: hidden;
+  border: 0px solid $Purple;
 }
 .servicesContainerX {
   width: auto;
@@ -167,7 +360,8 @@ p {
 .servicesContainerClass {
   width: auto;
   height: auto;
-  font-family: 'Open Sans Condensed', sans-serif;
+  //font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 3em;
   text-transform: uppercase;
@@ -178,27 +372,100 @@ p {
   padding-bottom: 30px;
   border: 0 solid $YellowGreen;
 }
-.servicesListClass {
+.servicesListClassX {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: $CopyFontSize;
   margin-top: 1px;
   color: rgb(56, 60, 60);
   border: 1px solid $YellowGreen;
 }
 .servicesULClass {
   //height: 100px;
-  border: 0 solid $Purple;
+  border: 0px solid $Purple;
+  font-size: $CopyFontSize;
+  line-height: $CopyLeading;
+  padding-left: 0px;
+  li {
+    font-family: 'Open Sans', sans-serif;
+    font-size: $CopyFontSize;
+    font-weight: 300;
+    line-height: $CopyLeading;
+    display: block;
+    width: 30%;
+    float: left;
+    padding-left: 40px;
+    padding-right: 20px;
+    border: 0px solid $YellowGreen;
+  }
 }
-li {
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 1.2em;
-  font-weight: 300;
-  display: block;
-  width: 30%;
-  float: left;
-  border: 0 solid $YellowGreen;
+// .servicesULClass li {
+//   font-family: 'Open Sans Condensed', sans-serif;
+//   font-size: $CopyFontSize;
+//   font-weight: 300;
+//   display: block;
+//   width: 30%;
+//   float: left;
+//   border: 0 solid $YellowGreen;
+// }
+.iconMainContainerClass{
+    height: auto; //300px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 0px solid $Cyanish;
 }
+.icon3ColumnsContainerClass{
+    height: auto; //120px; //auto
+    width: 100%; //113px; //100%
+    // margin-right: auto;
+    // margin-left: auto;
+    //text-align: center;
+    display: inline-block;
+    top: 30%;
+    position: relative;
+    border: 0px solid $Grey;
+}
+.iconClass{
+    height: auto; //90%;
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 0px solid $Red;
+}
+.iconImageClass{
+    width: 120px; //100%;
+    height: 113px; //100%;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    background-color: $Grey;
+    border: 0px solid $Green;
+}
+.iconTitleClass{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1em; //100%;
+    color: $Grey;
+    float: left;
+    position: relative;
+    width: 55%; //200px;
+    height: auto;
+    top: 30px;
+    padding-left: 0px; //10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px solid $YellowGreen;
+    // double-line {
+    //     line-height: 1em;
+    // }
+}
+
 /**-----| RESPONSES |-----**/
 .responsesMainContainerClass {
   //height: 350px;
@@ -210,7 +477,11 @@ li {
   // background-size: cover;
   //opacity: 0.6;
 }
-.responsesContainerClass {}
+.responsesContainerClass {
+    //position: absolute;
+    background: url("../images/arrowDownBG.jpg") no-repeat top center;
+    background-size: 100% 40%;
+}
 .responseTitleContainerClass {
   width: auto;
   height: auto;
@@ -220,12 +491,13 @@ li {
   font-size: 3em;
   text-transform: uppercase;
   text-align: center;
+  line-height: 100%;
   color: $Blueish;
-  margin-top: 10px;
-  padding-top: 20px;
-  padding-bottom: 30px;
-  z-index: 101;
-  background: url("../images/imagesTemp_05.jpg") no-repeat center center;
+  //margin-top: 10px;
+  padding-top: $titleTopLeading;
+  padding-bottom: $titleBottomLeading;
+  //z-index: 101;
+  //background: url("../images/arrowDownBG.jpg") no-repeat center center;
   // -webkit-background-size: cover;
   // -moz-background-size: cover;
   // -o-background-size: cover;
@@ -233,19 +505,20 @@ li {
   border: 0 solid $YellowGreen;
 }
 .testimonialsContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: $CopyFontSize;
+  //text-transform: uppercase;
+  text-align: center;
+  font-style: italic;
   width: 80%;
   height: auto;
   margin-right: auto;
   margin-left: auto;
-  font-family: 'Helvetica', sans-serif;
-  font-weight: 300;
-  font-size: 1.2em;
-  //text-transform: uppercase;
-  text-align: center;
-  font-style: italic;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  //padding-top: $paragTopLeading;
+  //padding-bottom: $paragBottomLeading;
 }
+
 /**-----| HEALTH CARE |-----**/
 .healthMainContainerClass {
   height: auto;
@@ -272,104 +545,81 @@ li {
   font-size: 3em;
   text-transform: uppercase;
   text-align: center;
+  line-height: 100%;
   color: $Blueish;
-  margin-top: 10px;
-  padding-top: 20px;
-  padding-bottom: 30px;
+  //margin-top: 10px;
+  padding-top: $titleTopLeading;
+  padding-bottom: $titleBottomLeading;
 }
 .healthQuoteContainerClass {
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 1.2em;
+  font-size: $CopyFontSize;
   //text-transform: uppercase;
   text-align: center;
   font-style: italic;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  // padding-top: $paragTopLeading;
+  padding-bottom: $paragBottomLeading;
+}
+.nameClass{
+    font-size: 1.3em;
+    font-style: normal;
 }
 .additionalInfo {
   padding-top: 20px;
   font-style: normal;
   border: 0 solid $Red;
+  font-size: 1.2em;
+  line-height: $CopyLeading;
 }
 
-
-/**-----| CAROUSEL |-----**/
-#modalCarousel{
-    width: 100%;
+/**-----| ABOUT |-----**/
+.aboutMainContainerClass {
+  height: auto;
+  //background-color: $LightGrey;
+  border: 0 solid $YellowGreen;
 }
-.active{
-    color: $CyanishBlue;
+.aboutContainerClass {
+  height: auto;
+  width: 82%;
+  margin-right: auto;
+  margin-left: auto;
+  border: 0 solid $Red;
 }
-.carousel-indicators{
-    /*background-color: yellowGreen;*/
-    // margin-left: 0px;
-    left: 50%;
-    border: 1px solid $Grey;
+// .aboutTitleClass{
+//     margin-right: auto;
+//     margin-left: auto;
+//     height: 200px;
+//     width: 90%;
+//     border: 1px solid $Grey;
+// }
+.aboutTitleContainerClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100%;
+  color: $Blueish;
+  //margin-top: 10px;
+  padding-top: $titleTopLeading;
+  padding-bottom: $titleBottomLeading;
 }
-.carousel-indicators li{
-    border: 1px solid $CyanishBlue;
-    border-radius: 10px;
-    width: 14px;
-    height: 14px;
-    margin: 10px;
+.aboutDescriptionClass {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: $CopyFontSize;
+  //text-transform: uppercase;
+  text-align: center;
+  font-style: normal; //italic normal
+  // padding-top: $paragTopLeading;
+  padding-bottom: $paragBottomLeading;
 }
-.carousel-indicators .active {
-    width: 18px;
-    height: 18px;
-    margin: 10px;
-    background-color: $CyanishBlue;
-}
-.item{
-    width: 100%;
-    /*height = "auto";*/
-}
-
-.imgClass{
-    position : relative;
-    padding : 0px;
-    margin : 0px;
-    /*overflow   : hidden;
-    border       : 1px solid cyan;*/
-    /*width  : 100%;
-     height  : 100%;*/
-    min-width : 210px;
-    /*minHeight : 810px;*/
-    background-size : cover;
-}
-.titleDescriptionBoxClass{
-    width: 100%;
-    position: absolute;
-    top: 50%;
-}
-.carouselTitleBoxClass{
-    /*position: absolute;*/
-    /*top: 50%;*/
-    text-align: center;
-    padding-left: 20px;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* float: left; */
-    color: $DarkGrey;
-    font-family: "Oswald", sans-serif;
-    font-size: 4em;
-    border: 1px solid grey;
-}
-.carouselDescriptionBoxClass{
-    /*position: absolute;*/
-    /*top: 60%;*/
-    text-align: center;
-    padding-left: 20px;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* float: left; */
-    color: $Grey;
-    font-family: "Open Sans", sans-serif;
-    font-size: 2em;
-    border: 1px solid yellow;
+.paragSpace{
+    padding-bottom: $paragBottomLeading;
 }
 
-
+/**-----| FOOTER |-----**/
 
 /**-----| TEMP MISCELLANEOUS DEVELOPMENT PHASE |-----**/
 .bottomSpace {
