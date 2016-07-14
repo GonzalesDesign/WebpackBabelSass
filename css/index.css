@@ -37,7 +37,7 @@ body {
   height: 30px;
   width: 30px;
   float: right;
-  background: url("/images/fbLogo.jpg") center center no-repeat;
+  background: url("../images/fbLogo.jpg") center center no-repeat;
   background-size: cover;
   border: 0px solid Green; }
 
@@ -387,7 +387,7 @@ p {
   line-height: 100%;
   color: #16579a;
   padding-top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
   background-size: 100%;
   border: 0 solid yellowGreen; }
 
@@ -424,7 +424,7 @@ p {
   line-height: 100%;
   color: #16579a;
   padding-top: 40px;
-  padding-bottom: 20px; }
+  padding-bottom: 0px; }
 
 .healthQuoteContainerClass {
   font-family: 'Open Sans', sans-serif;
@@ -466,7 +466,7 @@ p {
   line-height: 100%;
   color: #16579a;
   padding-top: 40px;
-  padding-bottom: 20px; }
+  padding-bottom: 0px; }
 
 .aboutDescriptionClass {
   font-family: 'Open Sans', sans-serif;
@@ -480,6 +480,78 @@ p {
   padding-bottom: 60px; }
 
 /**-----| FOOTER |-----**/
+.footerMainContainerClass {
+  width: 100%;
+  background-color: #16579a;
+  padding-top: 20px; }
+
+.footerContactContainer {
+  height: auto;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-bottom: 10px;
+  background-color: #16579a;
+  border: 0px solid aqua; }
+
+.eMailTo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  color: #f2f2f2;
+  text-align: center;
+  width: auto;
+  display: inline-block;
+  padding-top: 10px;
+  padding-right: 30px;
+  border: 0px solid Green; }
+
+.eMailTo a:link {
+  color: #f2f2f2;
+  text-decoration: none; }
+
+.eMailTo a:hover {
+  color: #0f98ab; }
+
+.eMailTo a:visited {
+  color: #f2f2f2; }
+
+.eMailTo a:active {
+  color: #f2f2f2; }
+
+.footerContactInfo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  color: #f2f2f2;
+  text-align: center;
+  width: auto;
+  display: inline-block;
+  padding-top: 10px;
+  padding-right: 30px;
+  border: 0px solid Green; }
+
+.footerFB {
+  height: 30px;
+  width: 30px;
+  background: url("../images/fbLogoWhite.jpg") center center no-repeat;
+  background-size: cover;
+  display: inline-block;
+  border: 0px solid Green; }
+
+.copyright {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.2em;
+  color: #f2f2f2;
+  text-align: center;
+  font-style: normal;
+  padding-top: 15px;
+  height: 50px;
+  width: 100%;
+  background-color: #1b2324; }
+
 /**-----| TEMP MISCELLANEOUS DEVELOPMENT PHASE |-----**/
 .bottomSpace {
   padding-top: 200px; }

@@ -18,7 +18,7 @@ $Purple: Purple;
 $BackgroundColor: rgba(250, 250, 250, .5);
 
 $titleTopLeading: 40px;
-$titleBottomLeading: 20px;
+$titleBottomLeading: 0px; //20px;
 $paragTopLeading: 10px;
 $paragBottomLeading: 60px;
 $CopyLeading:150%;
@@ -62,7 +62,7 @@ body{
     height: 30px;
     width: 30px;
     float: right;
-    background: url("/images/fbLogo.jpg") center center no-repeat;
+    background: url("../images/fbLogo.jpg") center center no-repeat;
     background-size : cover;
     border: 0px solid $Green;
 }
@@ -232,10 +232,7 @@ p {
   margin-top: 30px; //$paragTopLeading;
   color: $Grey;
 }
-// .p2 {
-//   font: italic bold 18px/30px Georgia, serif;
-//   width: 50%;
-// }
+
 /**-----|  |-----**/
 #introParag1 {}
 
@@ -263,6 +260,7 @@ p {
 //     height: 14px;
 //     margin: 10px;
 // }
+
 #listItemId{
     border-radius: 10px;
     width: 14px;
@@ -497,7 +495,7 @@ p {
   padding-top: $titleTopLeading;
   padding-bottom: $titleBottomLeading;
   //z-index: 101;
-  //background: url("../images/arrowDownBG.jpg") no-repeat center center;
+  //background: url("..../images/arrowDownBG.jpg") no-repeat center center;
   // -webkit-background-size: cover;
   // -moz-background-size: cover;
   // -o-background-size: cover;
@@ -620,6 +618,81 @@ p {
 }
 
 /**-----| FOOTER |-----**/
+.footerMainContainerClass{
+    //height: 120px;
+    width: 100%;
+    background-color: $Blueish;
+    //display: inline-block;
+    padding-top: 20px;
+}
+.footerContactContainer{
+    height: auto; //30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 10px;
+    background-color: $Blueish;
+    border: 0px solid aqua;
+}
+.eMailTo{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: $LightGrey;
+    text-align: center;
+    width: auto;
+    //float: left;
+    display: inline-block;
+    padding-top: 10px;
+    padding-right: 30px;
+    border: 0px solid $Green;
+    a:link{
+        color: $LightGrey;
+        text-decoration: none;
+    }
+    a:hover{ color: $Cyanish; }
+    a:visited{ color: $LightGrey; }
+    a:active{ color: $LightGrey; }
+
+}
+.footerContactInfo{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: $LightGrey;
+    text-align: center;
+    width: auto;
+    //float: left;
+    display: inline-block;
+    //padding-left: 30px;
+    padding-top: 10px;
+    padding-right: 30px;
+    border: 0px solid $Green;
+}
+.footerFB{
+    height: 30px;
+    width: 30px;
+    //float: right;
+    background: url("../images/fbLogoWhite.jpg") center center no-repeat;
+    background-size : cover;
+    display: inline-block;
+    border: 0px solid $Green;
+}
+.copyright{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    color: $LightGrey;
+    text-align: center;
+    font-style: normal;
+    padding-top: 15px;
+    height: 50px;
+    width: 100%;
+    background-color: $DarkGrey;
+    //border: 1px solid $YellowGreen;
+}
+
 
 /**-----| TEMP MISCELLANEOUS DEVELOPMENT PHASE |-----**/
 .bottomSpace {
