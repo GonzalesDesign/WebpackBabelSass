@@ -7,6 +7,7 @@
  ***********************************************/
 
 ( function() { /*IIFE:Immediately-Invoked Function Expression*/
+	"use strict";
 
 	/**----------===| CLASS: CREATE ELEMENTS |===----------**/
 	const createElem = require( './CreateElementClass.es6' );
@@ -59,7 +60,6 @@
 				let menuNavContainerId = document.getElementById( "menuNavContainer" + "Id_" + jx );
 				for ( let menus of introData.mainMenuNavs ) {
 					ji++;
-					//console.log("introData.menu: ", menus.menu);
 					createDiv.fCreateTag( "div", "menu", "menuClass", ji, menuNavContainerId );
 					let menuId = document.getElementById( "menu" + "Id_" + ji );
 					//let menuId = $("#menu" + "Id_" + ji);
@@ -92,50 +92,45 @@
 		} )
 	};
 
+	let screenXSmall = 550;
 	let screenSmall = 750;
 	let screenMedium = 970;
 	let largeScreen = 1170;
 
 	let fLandingPageResize = () => {
 		let browserWidth = window.innerWidth;
-		//console.log("browserWidth: ", browserWidth);
 		let menuClass = $( ".menuClass" );
 
 		/*-----[ Largest Screen ]-----*/
-		if ( browserWidth > 1170 ) {
-			console.log( ">largeScreen: ", largeScreen );
+		if ( browserWidth > largeScreen ) {
 			menuClass.css( {
 					"font-size": "1.8em",
 					"padding-left": "34px",
 					"padding-right": "34px"
 				} )
-				/*-----[ .container is between 1170 and 970 width ]-----*/
-		} else if ( browserWidth <= 1170 && browserWidth > 970 ) {
-			console.log( "> screenMedium: ", screenMedium );
+				/*-----[ .container is between largeScreen and screenMedium width ]-----*/
+		} else if ( browserWidth <= largeScreen && browserWidth > screenMedium ) {
 			menuClass.css( {
 					"font-size": "1.8em",
 					"padding-left": "12px",
 					"padding-right": "12px"
 				} )
-				/*-----[ .container is between 970 and 750 width ]-----*/
-		} else if ( browserWidth <= 970 && browserWidth > 750 ) {
-			console.log( "> screenMedium: ", screenMedium );
+				/*-----[ .container is between screenMedium and screenSmall width ]-----*/
+		} else if ( browserWidth <= screenMedium && browserWidth > screenSmall ) {
 			menuClass.css( {
 					"font-size": "1.4em",
 					"padding-left": "10px",
 					"padding-right": "10px"
 				} )
-				/*-----[ .container is between 750 and 550 width ]-----*/
-		} else if ( browserWidth <= 750 && browserWidth > 550 ) {
-			console.log( "> screenMedium: ", screenMedium );
+				/*-----[ .container is between screenSmall and screenXSmall width ]-----*/
+		} else if ( browserWidth <= screenSmall && browserWidth > screenXSmall ) {
 			menuClass.css( {
 					"font-size": "1.3em",
 					"padding-left": "10px",
 					"padding-right": "10px"
 				} )
-				/*-----[ .container is less than 550 width ]-----*/
+				/*-----[ .container is less than screenXSmall width ]-----*/
 		} else {
-			console.log( "screenSmall: ", screenSmall );
 			menuClass.css( {
 				"font-size": "1.2em",
 				"padding-left": "2px",
